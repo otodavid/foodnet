@@ -27,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
 
     h1, h2, h3 {
         line-height: 1.1;
-        margin-bottom: 12px;
+        margin-bottom: .3em;
         color: ${({theme}) => theme.text}
     }
 
@@ -43,7 +43,7 @@ export const GlobalStyles = createGlobalStyle`
 
     h3 {
         font-size: clamp(1.5rem, 1.3190rem + 1.0345vw, 2.25rem);
-        font-weight: 500;
+        font-weight: 600;
     }
 
     input, select, textarea {

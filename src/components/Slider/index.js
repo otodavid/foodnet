@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import {data} from './data';
 import {
-  Button,
   ButtonWrapper,
   Image,
   RealContent,
@@ -11,6 +10,7 @@ import {
   SlideItem,
   Wrapper,
 } from './Slider.style';
+import { Button } from '../Hero/Hero.style';
 
 
 const Slider =  () => {
@@ -65,8 +65,10 @@ const Slider =  () => {
                     <RealContent>
                       <h3>{ item.name }</h3>
                       <p>{ item.desc }</p>
-                      <p>Price:&nbsp; &#36;{ item.price }</p>
-                      <button>Order Now</button>
+                      <p>
+                        <strong>Price: </strong>&nbsp; &#36;{ item.price }
+                      </p>
+                      <Button primary>Order Now</Button>
                     </RealContent>
                   )}
                 </div>
@@ -74,8 +76,12 @@ const Slider =  () => {
         </SlideContent>
 
         <ButtonWrapper>
-          <Button onClick={prevSlide}>prev</Button>
-          <Button onClick={nextSlide}>next</Button>
+          <Button onClick={prevSlide}>
+            <i className="fas fa-chevron-left"></i>
+          </Button>
+          <Button onClick={nextSlide}>
+            <i className="fas fa-chevron-right"></i>
+          </Button>
         </ButtonWrapper>
       </Wrapper>
   );

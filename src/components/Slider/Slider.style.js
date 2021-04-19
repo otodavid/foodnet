@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from '../Hero/Hero.style';
 
 export const Wrapper = styled.div`
   background-color: ${({theme}) => theme.background};
@@ -8,14 +9,13 @@ export const Wrapper = styled.div`
 `;
 
 export const Slide = styled.div`
-  transform: translate(-50%, -50%); 
-  width: 496px;
-  height: 496px;
+  transform: translate(-50%, -40%); 
+  width: 500px;
+  height: 500px;
   position: relative;
   z-index: 0;
   
   & > div {
-    /* background-color: #; */
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -69,7 +69,7 @@ export const SlideItem = styled.div`
 `;
 
 export const Image = styled.div`
-  width: 220px;
+  width: 200px;
 
   img {
     width: 100%;
@@ -78,22 +78,28 @@ export const Image = styled.div`
 
 export const ButtonWrapper = styled.div`
   position: absolute;
-  top: calc(496px / 2 + 50px);
+  top: calc(500px / 2 + 90px);
   left: 70%;
   transform: translateX(-50%);
-  width: 140px;
+  width: 100px;
+  /* background-color: red; */
   display: flex;
   justify-content: space-between;
 
-`;
+  & ${Button} {
+    border: 0;
+    border-radius: 0px;
+    transition: all .3s;
 
-export const Button = styled.button`
-  background-color: #fff;
-  padding: 10px;
+    &:hover {
+      background-color: ${({theme}) => theme.primary};
+      color: ${({theme}) => theme.light};
+    }
+  }
 `;
 
 export const SlideContent = styled.div`
-  margin: -7rem 0 0;
+  margin: -5rem 0 0;
   display: flex;
   flex-flow: column nowrap;
   
@@ -117,5 +123,18 @@ export const SlideContent = styled.div`
 `;
 
 export const RealContent = styled.div`
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  & ${Button} {
+    margin-top: 1rem;
+    width: 100%;
+  }
+`;
+
+export const Title = styled.h3`
+
 `;
