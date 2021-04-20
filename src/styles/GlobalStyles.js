@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Nunito', sans-serif;
         background-color: ${props => props.theme.background};
         font-size: var(--body-text);
+        color: ${({theme}) => theme.text};
         font-weight: 500;
         line-height: 1.5;
     }
@@ -47,8 +48,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     input, select, textarea {
-        padding: 1rem;
-        border-radius: 4px;
+        padding: 1rem 2rem;
+        border: 0;
         outline: 0;
         font-family: inherit;
         font-size: var(--body-text);
@@ -64,5 +65,9 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 500;
         background-color: transparent;
         cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
     }
 `;

@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
-
 export const HeaderSection = styled.header`
     position: absolute;
     width: 100%;
@@ -16,10 +14,10 @@ export const Logo = styled(Link)`
     color: ${({theme}) => theme.primary};
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 1.5rem;
 `; 
 
 export const Nav = styled.ul`
-    list-style: none;
     display: none;
 `;
 

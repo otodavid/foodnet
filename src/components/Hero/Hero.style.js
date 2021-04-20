@@ -45,7 +45,7 @@ export const HeroContent = styled.div`
 
 export const Button = styled.button`
     background: transparent;
-    padding: .7rem 1.2rem;
+    padding: 1rem 1.6rem;
     border: 1px solid ${({theme}) => theme.primary};
     border-radius: 50px;
     color: ${({theme}) => theme.primary};
