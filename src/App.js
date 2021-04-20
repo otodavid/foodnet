@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import Home from './pages/Home';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { lightTheme } from "./styles/theme";
@@ -10,6 +10,7 @@ function App() {
 
   return (
     <Router>
+    <AppContainer>
       <ThemeProvider theme={lightTheme}>
         <GlobalStyles />
         <Header />
@@ -25,8 +26,13 @@ function App() {
 
 
       </ThemeProvider>
+      </AppContainer>
     </Router>
   );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  overflow: hidden;
+`;
