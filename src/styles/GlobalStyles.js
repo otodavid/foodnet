@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     input, select, textarea {
-        padding: 1rem 2rem;
+        padding: .8rem 2rem;
         border: 0;
         outline: 0;
         font-family: inherit;

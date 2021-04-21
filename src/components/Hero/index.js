@@ -1,4 +1,5 @@
-import heroPic from "../../assets/images/hero-mobile.png";
+import styled from "styled-components";
+import heroPic from "../../assets/images/hero.png";
 import { 
     Button,
     GreenDiv, 
@@ -7,14 +8,25 @@ import {
     ImageWrapper 
 } from "./Hero.style";
 
+
+const Overlay = styled.div`
+    background-color: rgb(0,0,0,0.65);
+`;
+
 const Hero = () => {
+    const myMediaQuery =  window.matchMedia('(min-width: 900px)')
+
     return ( 
         <HeroSection>
-            <ImageWrapper>
-                <img src={heroPic} alt="plate of vegetables" width="300" height="300" />
-            </ImageWrapper>
-
-            <GreenDiv />
+            <Overlay>
+            { myMediaQuery.matches && (
+                <>
+                    <ImageWrapper>
+                        <img src={heroPic} alt="plate of chicken breat" />
+                    </ImageWrapper>
+                    <GreenDiv />
+                </>
+            ) }
 
             <HeroContent>
                 <h1>start your day the right way</h1>
@@ -23,6 +35,8 @@ const Hero = () => {
                 </p>
                 <Button primary>view our menu</Button>
             </HeroContent>
+            </Overlay>
+
         </HeroSection>
     );
 }

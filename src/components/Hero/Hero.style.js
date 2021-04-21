@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
+import bgImage from '../../assets/images/gallery6.jpg';
 
 export const HeroSection = styled.div`
     position: relative;
-    padding-top: 7rem;
-    padding-bottom: 5rem;
+    background: url(${bgImage}) center / cover no-repeat;
+    color: ${({theme}) => theme.light};
 `;
 
 export const ImageWrapper = styled.div`
@@ -32,10 +33,11 @@ export const HeroContent = styled.div`
     text-align: center;
     width: 80%;
     margin: 0 auto;
-    margin-top: 2rem;
+    padding: 11rem 0 8rem;
 
     h1 {
         text-transform: capitalize;
+        color: ${({theme}) => theme.light};
     }
 
     p {
@@ -45,7 +47,7 @@ export const HeroContent = styled.div`
 
 export const Button = styled.button`
     background: transparent;
-    padding: 1rem 1.6rem;
+    padding: .8rem 1.6rem;
     border: 1px solid ${({theme}) => theme.primary};
     border-radius: 50px;
     color: ${({theme}) => theme.primary};
@@ -58,6 +60,6 @@ export const Button = styled.button`
     }
 
     ${HeroContent} & {
-        margin: 0 auto;
+        margin: 2rem auto 0;
     }
 `;
