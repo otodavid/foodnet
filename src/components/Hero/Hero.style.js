@@ -1,20 +1,33 @@
 import styled, { css } from "styled-components";
 import bgImage from '../../assets/images/gallery6.jpg';
+import { bp } from "../../styles/breakpoints";
 
 export const HeroSection = styled.div`
     position: relative;
     background: url(${bgImage}) center / cover no-repeat;
     color: ${({theme}) => theme.light};
+
+    @media ${bp.laptops} {
+        background: none;
+        background-color: ${({theme}) => theme.background};
+        color: ${({theme}) => theme.text};
+    }
 `;
 
 export const ImageWrapper = styled.div`
-    width: 40%;
-    margin: 0 auto;
+    flex: 1 1 50%;
+    position: relative;
+    z-index: 2;
+    padding-top: 9rem;
 
     img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+    }
+
+    @media ${bp.laptop} {
+        order: 3;
     }
 `;
 
@@ -22,11 +35,10 @@ export const GreenDiv = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    width: 100px;
+    width: 25vw;
     height: 100%;
-    z-index: -1;
-    transform: rotateZ(45deg) translate(-155px, 20px);
-    background: linear-gradient(to bottom, ${({theme}) => theme.primary} 40%, transparent 80%);
+    z-index: 0;
+    background-color: ${({theme}) => theme.primary} ;
 `;
 
 export const HeroContent = styled.div`
@@ -38,10 +50,20 @@ export const HeroContent = styled.div`
     h1 {
         text-transform: capitalize;
         color: ${({theme}) => theme.light};
+
+        @media ${bp.laptop} {
+            color: ${({theme}) => theme.text};
+        }
     }
 
     p {
         margin-bottom: 1rem;
+    }
+
+    @media ${bp.laptop} {
+        flex: 1 1 50%;
+        padding: 15rem 5rem 7rem 7rem;
+        text-align: left;
     }
 `;
 
@@ -61,5 +83,10 @@ export const Button = styled.button`
 
     ${HeroContent} & {
         margin: 2rem auto 0;
+        
+        @media ${bp.laptop} {
+            margin: 2rem 0;
+        }
     }
+
 `;

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { bp } from "../../styles/breakpoints";
 
 export const HeaderSection = styled.header`
     position: absolute;
@@ -10,6 +11,12 @@ export const HeaderSection = styled.header`
     justify-content: space-between;
     padding: 1.5rem 2.5rem;
     z-index: 4;
+
+    @media ${bp.desktop} {
+        width: 75vw;
+        top: 30px;
+        padding: 1.5rem 0 0 7rem;
+    }
 `;
 
 export const Overlay = styled.div`
@@ -23,6 +30,13 @@ export const Overlay = styled.div`
     transition: transform .4s;
 
     &.active {
+        transform: translateX(0vw);
+    }
+
+    @media ${bp.desktop} {
+        position: relative;
+        width: auto;
+        height: auto;
         transform: translateX(0vw);
     }
 `;
@@ -49,12 +63,24 @@ export const Nav = styled.ul`
     ${Overlay}.active & {
         box-shadow: 0 0 0 800px rgb(0,0,0,0.7);
     }
+
+    @media ${bp.desktop} {
+        display: flex;
+        padding: 0;
+        padding-right: 2rem;
+        width: 100%;
+        background-color: transparent;
+    }
 `;
 
 export const NavLink = styled(Link)`
     padding: .5rem 1rem;
     font-size: 24px;
     color: ${({theme}) => theme.text};
+
+    @media ${bp.desktop} {
+        font-size: 1rem;
+    }
 `;
 
 export const MenuIcon = styled.button` 
@@ -68,5 +94,9 @@ export const MenuIcon = styled.button`
 
     & .fa-times {
         color: ${({theme}) => theme.text};
+    }
+
+    @media ${bp.desktop} {
+        display: none;
     }
 `;

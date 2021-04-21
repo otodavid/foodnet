@@ -11,14 +11,15 @@ import {
 const Header = () => {
     const [ isMenuOpen, setisMenuOpen ] = useState(false);
 
-    const handleOpenMenu = () => {
+    const handleMenu = (e) => {
+        // handle menu when hamburger button is clicked
         isMenuOpen ? setisMenuOpen(false) : setisMenuOpen(true);
-    }
 
-    const handleCloseOverlay = (e) => {
-        if(e.target.classList.contains('active')) {
-            handleOpenMenu();
-        }
+        // close menu when dark overlay is clicked
+        e.target.classList.contains("active") && setisMenuOpen(false);
+
+        // close menu when any link is clicked
+        e.target.closest('li') && setisMenuOpen(false);
     }
     
     return ( 
@@ -27,7 +28,7 @@ const Header = () => {
             
             <Overlay
                 className={isMenuOpen ? "active" : ''}
-                onClick={handleCloseOverlay}
+                onClick={handleMenu}
             >
                 <Nav>
                     <li>
@@ -45,7 +46,7 @@ const Header = () => {
                 </Nav>
 
             </Overlay>
-            <MenuIcon onClick={handleOpenMenu}>
+            <MenuIcon onClick={handleMenu}>
                 <i 
                     className={ isMenuOpen ? "fas fa-times" : "fas fa-bars"}
                 ></i>
