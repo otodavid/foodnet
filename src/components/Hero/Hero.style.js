@@ -7,7 +7,7 @@ export const HeroSection = styled.div`
     background: url(${bgImage}) center / cover no-repeat;
     color: ${({theme}) => theme.light};
 
-    @media ${bp.laptops} {
+    @media ${bp.laptop} {
         background: none;
         background-color: ${({theme}) => theme.background};
         color: ${({theme}) => theme.text};

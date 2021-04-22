@@ -24,7 +24,7 @@ const Header = () => {
     
     return ( 
         <HeaderSection>
-            <Logo to="/home">foodnet</Logo>
+            <Logo to="/">foodnet</Logo>
             
             <Overlay
                 className={isMenuOpen ? "active" : ''}
