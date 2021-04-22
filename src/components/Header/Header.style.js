@@ -12,10 +12,18 @@ export const HeaderSection = styled.header`
     padding: 1.5rem 2.5rem;
     z-index: 4;
 
-    @media ${bp.desktop} {
-        width: 75vw;
+    @media ${bp.tablet} {
         top: 30px;
-        padding: 1.5rem 0 0 7rem;
+        padding: 1.5rem 2rem 0 4rem;
+    }
+
+    @media ${bp.laptop} {
+        width: 75vw;
+        padding: 1.5rem 0rem 0 6rem;
+    }
+
+    @media ${bp.desktop} {
+        padding-left: 9rem;
     }
 `;
 
@@ -33,7 +41,7 @@ export const Overlay = styled.div`
         transform: translateX(0vw);
     }
 
-    @media ${bp.desktop} {
+    @media ${bp.tablet} {
         position: relative;
         width: auto;
         height: auto;
@@ -52,7 +60,7 @@ export const Nav = styled.ul`
     margin-left: auto;
     width: 60%;
     height: 100%;
-    padding: 80px 2rem;
+    padding: 100px 2rem;
     background-color: ${({theme}) => theme.light};
     transition: box-shadow .3s;
 
@@ -64,7 +72,7 @@ export const Nav = styled.ul`
         box-shadow: 0 0 0 800px rgb(0,0,0,0.7);
     }
 
-    @media ${bp.desktop} {
+    @media ${bp.tablet} {
         display: flex;
         padding: 0;
         padding-right: 2rem;
@@ -78,8 +86,13 @@ export const NavLink = styled(Link)`
     font-size: 24px;
     color: ${({theme}) => theme.text};
 
-    @media ${bp.desktop} {
+    @media ${bp.tablet} {
         font-size: 1rem;
+        color: ${({theme}) => theme.light};
+    }
+
+    @media ${bp.laptop} {
+        color: ${({theme}) => theme.text};
     }
 `;
 
@@ -96,7 +109,7 @@ export const MenuIcon = styled.button`
         color: ${({theme}) => theme.text};
     }
 
-    @media ${bp.desktop} {
+    @media ${bp.tablet} {
         display: none;
     }
 `;

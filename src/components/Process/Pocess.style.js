@@ -1,9 +1,16 @@
 import styled from "styled-components";
+import { bp } from "../../styles/breakpoints";
 
 export const ProcessSection = styled.section`
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
     background-color: ${({theme}) => theme.light};
+
+    & p, h2 {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 `;
 
 export const Heading2 = styled.h2`
@@ -14,9 +21,13 @@ export const Heading2 = styled.h2`
 export const CardList = styled.div`
     margin: 3rem auto;
     padding: 0rem 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2.5rem;
-    justify-items: center;
-    max-width: 1000px;
+    max-width: 950px;
+
+    @media ${bp.tablet} {
+        padding: 0 2rem;
+    }
 `;

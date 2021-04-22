@@ -15,19 +15,31 @@ export const HeroSection = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-    flex: 1 1 50%;
-    position: relative;
-    z-index: 2;
-    padding-top: 9rem;
-
-    img {
-        width: 90%;
-        height: 90%;
-        object-fit: contain;
-    }
 
     @media ${bp.laptop} {
+        flex: 1 1 50%;
+        position: relative;
+        z-index: 2;
+        padding-top: 9rem;
         order: 3;
+        
+        img {
+            display: block;
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            margin-right: 10%;
+            margin-left: auto;
+        }
+
+    }
+    @media ${bp.desktop} {
+        
+        img {
+            width: 85%;
+            height: 85%;
+        }
+
     }
 `;
 
@@ -47,6 +59,11 @@ export const HeroContent = styled.div`
     margin: 0 auto;
     padding: 11rem 0 8rem;
 
+    & h1, & p {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
     h1 {
         text-transform: capitalize;
         color: ${({theme}) => theme.light};
@@ -57,13 +74,17 @@ export const HeroContent = styled.div`
     }
 
     p {
-        margin-bottom: 1rem;
+        margin: 1rem auto;
     }
 
     @media ${bp.laptop} {
         flex: 1 1 50%;
-        padding: 15rem 5rem 7rem 7rem;
+        padding: 15rem 1rem 7rem 6rem;
         text-align: left;
+    }
+
+    @media ${bp.desktop} {
+        padding-left: 9rem;
     }
 `;
 

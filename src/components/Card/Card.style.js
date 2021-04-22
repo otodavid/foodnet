@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
+    flex: 1 1 250px;
     padding: 3.5rem 1.5rem;
     background-color: ${({theme}) => theme.background};
     border-radius: 10px;

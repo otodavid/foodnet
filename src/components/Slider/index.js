@@ -42,16 +42,16 @@ const Slider =  () => {
   return (
       <Wrapper>
         <Slide>
-        <div className="rotate">
-          {data.map((item, index) => (
-            <SlideItem key={item.id}
-              className={`slide` + index}
-            >
-                <Image>
-                  <img src={item.image} alt="" />
-                </Image>
-            </SlideItem>
-          ))}
+          <div className="rotate">
+            {data.map((item, index) => (
+              <SlideItem key={item.id}
+                className={`slide` + index}
+              >
+                  <Image>
+                    <img src={item.image} alt="" />
+                  </Image>
+              </SlideItem>
+            ))}
           </div>
         </Slide>
 

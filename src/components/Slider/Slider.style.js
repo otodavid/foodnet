@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { bp } from "../../styles/breakpoints";
 import { Button } from '../Hero/Hero.style';
 
 export const Wrapper = styled.div`
@@ -6,14 +7,18 @@ export const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   padding-bottom: 5rem;
+
+  @media ${bp.laptop} {
+    display: flex;
+  }
 `;
 
 export const Slide = styled.div`
-  transform: translate(-50%, -40%); 
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   position: relative;
   z-index: 0;
+  transform: translate(-50%, -40%); 
   
   & > div {
     width: 100%;
@@ -25,6 +30,15 @@ export const Slide = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+
+  @media ${bp.laptop} {
+    flex: 0 1 800px;
+    height: 800px;
+    
+    & > div {
+      border: 70px solid ${({theme}) => theme.primary};
+    }
   }
 `;
 
@@ -41,6 +55,11 @@ export const SlideItem = styled.div`
     grid-column: 2/3;
     grid-row: 2/3;
     transform: rotateZ(0deg);
+
+    @media ${bp.laptop} {
+      left: 20%;
+      top: -15%;
+    }
   }
   
   &.slide1 {
@@ -49,6 +68,11 @@ export const SlideItem = styled.div`
     grid-column: 2/3;
     grid-row: 1/2;
     transform: rotateZ(270deg);
+
+    @media ${bp.laptop} {
+      left: -10%;
+      bottom: 50%;
+    }
   }
   
   &.slide2 {
@@ -57,6 +81,11 @@ export const SlideItem = styled.div`
     grid-column: 1/2;
     grid-row: 1/2;
     transform: rotateZ(180deg);
+
+    @media ${bp.laptop} {
+      right: 50%;
+      bottom: 25%;
+    }
   }
   
   &.slide3 {
@@ -65,6 +94,11 @@ export const SlideItem = styled.div`
     grid-column: 1/2;
     grid-row: 2/3;
     transform: rotate(90deg);
+
+    @media ${bp.laptop} {
+      right: 30%;
+      top: 20%;
+    }
   }
 `;
 
@@ -74,6 +108,10 @@ export const Image = styled.div`
   img {
     width: 100%;
   }
+
+  @media ${bp.laptop} {
+    width: 400px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -82,7 +120,6 @@ export const ButtonWrapper = styled.div`
   left: 70%;
   transform: translateX(-50%);
   width: 100px;
-  /* background-color: red; */
   display: flex;
   justify-content: space-between;
 
@@ -95,6 +132,11 @@ export const ButtonWrapper = styled.div`
       background-color: ${({theme}) => theme.primary};
       color: ${({theme}) => theme.light};
     }
+  }
+
+  @media ${bp.laptop} {
+    top: 600px;
+    left: 40%;
   }
 `;
 
@@ -120,6 +162,12 @@ export const SlideContent = styled.div`
       transform: translateY(0vh);      
     }
   }
+
+  @media ${bp.laptop} {
+    margin-top: 8rem;
+    flex: 0 450px;
+    height: 0%;
+  }
 `;
 
 export const RealContent = styled.div`
@@ -132,6 +180,10 @@ export const RealContent = styled.div`
   & ${Button} {
     margin-top: 1rem;
     width: 100%;
+  }
+
+  @media ${bp.laptop} {
+
   }
 `;
 
