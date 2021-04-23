@@ -36,4 +36,6 @@ export default App;
 
 const AppContainer = styled.div`
   overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
 `;

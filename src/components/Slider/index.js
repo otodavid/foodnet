@@ -4,6 +4,7 @@ import {data} from './data';
 import {
   ButtonWrapper,
   Image,
+  Price,
   RealContent,
   Slide,
   SlideContent,
@@ -45,11 +46,9 @@ const Slider =  () => {
           <div className="rotate">
             {data.map((item, index) => (
               <SlideItem key={item.id}
-                className={`slide` + index}
+                className={`slide` + item.id}
               >
-                  <Image>
-                    <img src={item.image} alt="" />
-                  </Image>
+                <img src={item.image} alt="" />
               </SlideItem>
             ))}
           </div>
@@ -65,10 +64,9 @@ const Slider =  () => {
                     <RealContent>
                       <h3>{ item.name }</h3>
                       <p>{ item.desc }</p>
-                      <p>
-                        <strong>Price: </strong>&nbsp; &#36;{ item.price }
-                      </p>
-                      <Button primary>Order Now</Button>
+                      <Price>
+                        &#36; { item.price }
+                      </Price>
                     </RealContent>
                   )}
                 </div>
@@ -83,6 +81,8 @@ const Slider =  () => {
             <i className="fas fa-chevron-right"></i>
           </Button>
         </ButtonWrapper>
+        
+        
       </Wrapper>
   );
 };

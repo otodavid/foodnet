@@ -8,109 +8,174 @@ export const Wrapper = styled.div`
   overflow: hidden;
   padding-bottom: 5rem;
 
-  @media ${bp.laptop} {
+  @media ${bp.tablet} {
     display: flex;
+  }
+
+  @media ${bp.laptop} {
+    padding-bottom: 17rem;
+  }
+
+  @media ${bp.desktop} {
+    padding-bottom: 20rem;
   }
 `;
 
 export const Slide = styled.div`
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px; 
   position: relative;
   z-index: 0;
   transform: translate(-50%, -40%); 
   
-  & > div {
+  .rotate {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     border: 20px solid ${({theme}) => theme.primary};
     transform: rotateZ(0deg);
     transition: all .5s;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    position: relative;
   }
 
+  @media ${bp.phablet} {
+    width: 700px;
+    height: 700px; 
+
+    .rotate {
+      border: 40px solid ${({theme}) => theme.primary};
+    }
+  }
+
+  @media ${bp.tablet} {
+    position: absolute;
+    width: 500px;
+    height: 500px; 
+    
+  }
   @media ${bp.laptop} {
-    flex: 0 1 800px;
+    width: 800px;
     height: 800px;
     
-    & > div {
+    .rotate {
       border: 70px solid ${({theme}) => theme.primary};
     }
+  }
+
+  @media ${bp.desktop} {
+    width: 1000px;
+    height: 1000px;
   }
 `;
 
 export const SlideItem = styled.div` 
-  position: relative;
+  position: absolute;
   z-index: 2;
   transition: all .5s;
   transform-origin: center;
   will-change: transform;
-
-  &.slide0 {
-    left: 40%;
-    top: 20%;
-    grid-column: 2/3;
-    grid-row: 2/3;
-    transform: rotateZ(0deg);
-
-    @media ${bp.laptop} {
-      left: 20%;
-      top: -15%;
-    }
-  }
-  
-  &.slide1 {
-    left: 20%;
-    bottom: 40%;
-    grid-column: 2/3;
-    grid-row: 1/2;
-    transform: rotateZ(270deg);
-
-    @media ${bp.laptop} {
-      left: -10%;
-      bottom: 50%;
-    }
-  }
-  
-  &.slide2 {
-    right: 40%;
-    bottom: 20%;
-    grid-column: 1/2;
-    grid-row: 1/2;
-    transform: rotateZ(180deg);
-
-    @media ${bp.laptop} {
-      right: 50%;
-      bottom: 25%;
-    }
-  }
-  
-  &.slide3 {
-    right: 30%; 
-    top: 40%;
-    grid-column: 1/2;
-    grid-row: 2/3;
-    transform: rotate(90deg);
-
-    @media ${bp.laptop} {
-      right: 30%;
-      top: 20%;
-    }
-  }
-`;
-
-export const Image = styled.div`
   width: 200px;
 
   img {
     width: 100%;
   }
 
+  @media ${bp.phablet} {
+    width: 300px;
+  }
+
+  @media ${bp.tablet} {
+    width: 250px;
+  }
+
   @media ${bp.laptop} {
     width: 400px;
+  }
+
+  &.slide1 {
+    top: 55%;
+    left: 70%;
+    transform: rotateZ(0deg);
+
+    @media ${bp.phablet} {
+      top: 55%;
+      left: 75%;
+    }
+
+    @media ${bp.tablet} {
+      left: 70%;
+    }
+
+    @media ${bp.laptop} {
+      top: 53%;
+      left: 70%;
+    }
+
+    @media ${bp.desktop} {
+      top: 55%;
+      left: 80%;
+    }
+  }
+  
+  &.slide2 {
+    top: -30%; 
+    left: 55%;
+    transform: rotate(270deg);
+
+    @media ${bp.phablet} {
+      top: -25%;
+      left: 55%;
+    }
+
+    @media ${bp.tablet} {
+      top: -30%;
+    }
+
+    @media ${bp.desktop} {
+      top: -25%;
+    }
+  }
+  
+  &.slide3 {
+    top: -10%;
+    left: -25%;
+    transform: rotateZ(180deg);
+
+    @media ${bp.phablet} {
+      top: 0%;
+      left: -20%;
+    }
+
+    @media ${bp.tablet} {
+      top: -15%;
+      left: -30%;
+    }
+
+    @media ${bp.desktop} {
+      top: 0%;
+      left: -25%;
+    }
+  }
+  
+  &.slide4 {
+    top: 75%;
+    left: -10%;
+    transform: rotateZ(90deg);
+
+    @media ${bp.phablet} {
+      top: 80%;
+      left: 0%;
+    }
+
+    @media ${bp.tablet} {
+      top: 75%;
+      left: -10%;
+    }
+
+    @media ${bp.desktop} {
+      top: 80%;
+      left: 0%;
+    }
   }
 `;
 
@@ -134,6 +199,16 @@ export const ButtonWrapper = styled.div`
     }
   }
 
+  @media ${bp.phablet} {
+    top: 520px;
+    left: 75%;
+  }
+
+  @media ${bp.tablet} {
+    top: 380px;
+    left: 250px;
+  }
+
   @media ${bp.laptop} {
     top: 600px;
     left: 40%;
@@ -141,9 +216,10 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const SlideContent = styled.div`
-  margin: -5rem 0 0;
+  margin-top: 3rem;
   display: flex;
   flex-flow: column nowrap;
+  padding: 0 .5rem;
   
   & > div {
     background-color: ${({theme}) => theme.light};
@@ -163,30 +239,52 @@ export const SlideContent = styled.div`
     }
   }
 
+  @media ${bp.phablet} {
+    margin-top: -3rem;
+
+    & > div {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media ${bp.tablet} {
+    margin: 5rem 0 0 auto;
+    flex: 0 1 55%;
+
+    & > div {
+      width: 80%;
+      max-width: 500px;
+    }
+  }
+
   @media ${bp.laptop} {
-    margin-top: 8rem;
-    flex: 0 450px;
+    margin-top: 9rem;
+    margin-right: 2%;
+    flex: 0 50%;
     height: 0%;
+  }
+
+  @media ${bp.desktop} {
+    margin-top: 11rem;
+    margin-right: 7%;
+    flex: 0 1 45%;
   }
 `;
 
 export const RealContent = styled.div`
-  padding: 3rem 1.5rem;
+  padding: 2.5rem 2rem 2rem;
 
   p {
-    margin-bottom: 1rem;
-  }
-
-  & ${Button} {
-    margin-top: 1rem;
-    width: 100%;
-  }
-
-  @media ${bp.laptop} {
-
+    margin: 1rem 0;
   }
 `;
 
-export const Title = styled.h3`
-
+export const Price = styled.p`
+  font-size: 22px;
+  color: ${({theme}) => theme.primary};
+  font-weight: 600;
+  text-align: right;
+  padding-top: 1rem;
 `;
