@@ -288,3 +288,27 @@ export const Price = styled.p`
   text-align: right;
   padding-top: 1rem;
 `;
+
+
+export const Thumbnails = styled.div`
+  position: absolute;
+  top: 100px;
+  left: 85%;
+  display: flex;
+  flex-flow: column wrap;
+  height: 200px;
+  align-items: center;
+  justify-content: space-between;
+
+  @media ${bp.phablet} {
+    top: 520px;
+    left: 20%;
+    width: 220px;
+    flex-flow: row wrap;
+    height: auto;
+  }
+`;
+
+export const Nails = styled.div`
+
+`;

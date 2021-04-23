@@ -3,11 +3,13 @@ import { useState } from 'react';
 import {data} from './data';
 import {
   ButtonWrapper,
+  Nails,
   Price,
   RealContent,
   Slide,
   SlideContent,
   SlideItem,
+  Thumbnails,
   Wrapper,
 } from './Slider.style';
 import { Button } from '../Hero/Hero.style';
@@ -36,6 +38,21 @@ const Slider =  () => {
       setCurrent(current + 90);
 
       setContentCurrent(contentCurrent + 1);
+    }
+  }
+  console.log(current)
+
+  const test = (e, id) => {
+    if(current <= 270) {
+      const rotate = document.querySelector(".rotate");
+      const reset = id - 1;
+      rotate.style.transform = `rotateZ(${reset * 90}deg)`;
+      
+      setCurrent(reset * 90);
+
+      const resetContent = id - 1;
+
+      setContentCurrent(resetContent);
     }
   }
 
@@ -81,6 +98,14 @@ const Slider =  () => {
           </Button>
         </ButtonWrapper>
         
+        <Thumbnails>
+         {data.map(item => (
+          <Nails key={item.id} onClick={(e) => test(e, item.id)}>
+            <img src={item.image} alt="" width="40" />
+          </Nails>
+           
+         ))}
+        </Thumbnails>
         
       </Wrapper>
   );
