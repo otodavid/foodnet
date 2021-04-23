@@ -9,6 +9,7 @@ export const HeaderSection = styled.header`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.5rem 2.5rem;
     z-index: 4;
 
@@ -134,3 +135,7 @@ export const MenuIcon = styled.button`
         display: none;
     }
 `;
+
+
+
+NavLink.displayName = "NavLink";
