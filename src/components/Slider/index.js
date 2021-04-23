@@ -3,7 +3,6 @@ import { useState } from 'react';
 import {data} from './data';
 import {
   ButtonWrapper,
-  Image,
   Price,
   RealContent,
   Slide,
