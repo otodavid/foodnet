@@ -9,7 +9,8 @@ import {
     Newsletter,
     NewsletterIntro,
     SocialIcons,
-    SubscribeForm
+    SubscribeForm,
+    TextField
 } from "./Footer.style";
 
 const Footer = () => {
@@ -24,7 +25,7 @@ const Footer = () => {
                 </NewsletterIntro>
                 
                 <SubscribeForm>
-                    <input type="text" placeholder="Email Address" />
+                    <TextField placeholder="Email Address" />
                     <Button primary>Subscribe</Button>
                 </SubscribeForm>
             </Newsletter>

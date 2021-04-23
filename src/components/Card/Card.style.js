@@ -19,9 +19,10 @@ export const SvgWrapper = styled.div`
     }
 `;
 export const CardTitle = styled.p`
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
     margin-bottom: .5rem;
+    color: ${({theme}) => theme.secondary};
 `;
 // export const CardContainer = styled.div`
 

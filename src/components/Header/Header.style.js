@@ -89,6 +89,27 @@ export const NavLink = styled(Link)`
     @media ${bp.tablet} {
         font-size: 1rem;
         color: ${({theme}) => theme.light};
+        font-weight: 500;
+        position: relative;
+
+        &:hover {
+            color: ${({theme}) => theme.secondary}
+        }
+        
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 1rem;
+            width: 0;
+            height: 2px;
+            background-color: ${({theme}) => theme.primary};
+            transition: width .3s ease;
+        }
+
+        &:hover::after {
+            width: 50%;
+        }
     }
 
     @media ${bp.laptop} {

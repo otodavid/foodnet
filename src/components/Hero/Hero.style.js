@@ -69,7 +69,7 @@ export const HeroContent = styled.div`
         color: ${({theme}) => theme.light};
 
         @media ${bp.laptop} {
-            color: ${({theme}) => theme.text};
+            color: ${({theme}) => theme.secondary};
         }
     }
 

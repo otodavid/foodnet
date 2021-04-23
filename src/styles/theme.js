@@ -1,14 +1,15 @@
 export const lightTheme = {
-    background: "rgb(248,250,248)",
+    background: "#fafbee",
     primary: "#00925A",
-    text: "#011936",
+    secondary: "#022E64",
+    text: "#3d3d3d",
     light: "#fff",
-    dark: "#000",
+    dark: "#141414",
 }
 
 export const darkTheme = {
     text: "#FAFAFA",
     primary: "#00925A",
-    background: "#011936",
+    background: "#022B5E",
 }
 

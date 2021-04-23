@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { bp } from '../../styles/breakpoints';
 
 export const GallerySection = styled.div`
     display: grid;
@@ -10,6 +11,15 @@ export const GallerySection = styled.div`
         "img-3 img-5 img-5"
         "img-9 img-9 img-1"
         "img-10 img-7 img-7";
+
+    @media ${bp.tablet} {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 300px);
+        grid-template-areas: 
+        "img-3 img-1 img-2 img-10"
+        "img-3 img-7 img-9 img-9"
+        "img-6 img-4 img-8 img-5";
+    }
 `;
 
 export const GalleryContent = styled.div`
