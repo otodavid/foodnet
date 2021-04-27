@@ -1,17 +1,7 @@
 // Import Swiper React components
 import { useState } from 'react';
 import {data} from './data';
-import {
-  ButtonWrapper,
-  Nails,
-  Price,
-  RealContent,
-  Slide,
-  SlideContent,
-  SlideItem,
-  Thumbnails,
-  Wrapper,
-} from './Slider.style';
+import * as S from './Slider.style';
 import { Button } from '../Hero/Hero.style';
 
 
@@ -40,7 +30,6 @@ const Slider =  () => {
       setContentCurrent(contentCurrent + 1);
     }
   }
-  console.log(current)
 
   const test = (e, id) => {
     if(current <= 270) {
@@ -55,59 +44,67 @@ const Slider =  () => {
       setContentCurrent(resetContent);
     }
   }
+  
 
   return (
-      <Wrapper>
-        <Slide>
+      <S.Wrapper>
+        <S.Slide>
           <div className="rotate">
             {data.map((item, index) => (
-              <SlideItem key={item.id}
+              <S.SlideItem key={item.id}
                 className={`slide` + item.id}
               >
                 <img src={item.image} alt="" />
-              </SlideItem>
+              </S.SlideItem>
             ))}
           </div>
-        </Slide>
+        </S.Slide>
 
-        <SlideContent>
+        <S.SlideContent>
             { data.map((item, index) => (
                 <div 
                   key={item.id}
                   className={index === contentCurrent ? "active" : ""}
                 >
                   { index === contentCurrent && (
-                    <RealContent>
+                    <S.RealContent className="testing">
                       <h3>{ item.name }</h3>
                       <p>{ item.desc }</p>
-                      <Price>
+                      <S.Price>
                         &#36; { item.price }
-                      </Price>
-                    </RealContent>
+                      </S.Price>
+                    </S.RealContent>
                   )}
                 </div>
             ))}
-        </SlideContent>
+        </S.SlideContent>
 
-        <ButtonWrapper>
-          <Button onClick={prevSlide}>
-            <i className="fas fa-chevron-left"></i>
-          </Button>
-          <Button onClick={nextSlide}>
-            <i className="fas fa-chevron-right"></i>
-          </Button>
-        </ButtonWrapper>
+        {/* <S.ButtonWrapper>
+         
+        </S.ButtonWrapper> */}
         
-        <Thumbnails>
-         {data.map(item => (
-          <Nails key={item.id} onClick={(e) => test(e, item.id)}>
-            <img src={item.image} alt="" width="40" />
-          </Nails>
-           
-         ))}
-        </Thumbnails>
         
-      </Wrapper>
+
+
+        <S.PaginationWrapper>
+          <S.Pagination>
+            <S.Thumbnails>
+            {data.map(item => (
+              <S.Nails key={item.id} onClick={(e) => test(e, item.id)}>
+                <img src={item.image} alt="" width="40" />
+              </S.Nails>
+            ))}
+            </S.Thumbnails>
+
+            <Button onClick={prevSlide}>
+              <i className="fas fa-chevron-left"></i>
+            </Button>
+            <Button onClick={nextSlide}>
+              <i className="fas fa-chevron-right"></i>
+            </Button>
+          </S.Pagination>
+        </S.PaginationWrapper>
+      </S.Wrapper>
   );
 };
 

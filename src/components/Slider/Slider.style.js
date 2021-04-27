@@ -216,7 +216,7 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const SlideContent = styled.div`
-  margin-top: 3rem;
+  margin-top: -1rem;
   display: flex;
   flex-flow: column nowrap;
   padding: 0 .5rem;
@@ -289,16 +289,105 @@ export const Price = styled.p`
   padding-top: 1rem;
 `;
 
+export const PaginationWrapper = styled.div`
+  position: absolute;
+  top: 50px;
+  left: 75%;
+
+  @media ${bp.phablet} {
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media ${bp.tablet} {
+    top: 370px;
+    left: 25%;
+  }
+
+  @media ${bp.laptop} {
+    top: 74%;
+    left: 50%;
+  }
+`;
+
+export const Pagination = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & ${Button} {
+    border: 0;
+    padding: .8rem;
+    display: inline;
+  }
+
+  @media ${bp.phablet} {
+    & ${Button} {
+      position: absolute;
+      border: 0;
+      padding: .8rem;
+      display: inline;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+
+      &:first-of-type {
+        left: -70px;
+      }
+
+      &:last-of-type {
+        right: -70px;
+      }
+    }
+
+    @media ${bp.tablet} {
+      & ${Button} {
+        position: absolute;
+        border: 0;
+        padding: .8rem;
+        display: inline;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+
+        &:first-of-type {
+          left: -55px;
+        }
+
+        &:last-of-type {
+          right: -55px;
+        }
+      }
+    }
+
+    @media ${bp.laptop} {
+      & ${Button} {
+        padding: .8rem;
+        top: 50%;
+        font-size: 1.5rem;
+
+        &:first-of-type {
+          left: -90px;
+        }
+
+        &:last-of-type {
+          right: -90px;
+        }
+      }
+    }
+`;
 
 export const Thumbnails = styled.div`
-  position: absolute;
-  top: 100px;
-  left: 85%;
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
-  height: 200px;
+  height: 210px;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 
   @media ${bp.phablet} {
     top: 520px;
@@ -306,9 +395,9 @@ export const Thumbnails = styled.div`
     width: 220px;
     flex-flow: row wrap;
     height: auto;
+    margin-bottom: 0;
   }
 `;
-
 export const Nails = styled.div`
 
 `;
