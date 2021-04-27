@@ -62,7 +62,7 @@ export const HeroContent = styled.div`
         max-width: 500px;
         margin: 0 auto;
 
-        @media ${bp.laptop} {
+        @media ${bp.desktop} {
             margin: 0;
             padding-left: 0;
         }
@@ -90,7 +90,6 @@ export const HeroContent = styled.div`
         flex: 1 1 50%;
         padding: 15rem 1rem 7rem 6rem;
         text-align: left;
-        padding-left: 0;
     }
 
     @media ${bp.desktop} {
