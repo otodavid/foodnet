@@ -1,13 +1,7 @@
 import styled from "styled-components";
 import heroPic from "../../assets/images/hero.png";
 import { bp } from "../../styles/breakpoints";
-import { 
-    Button,
-    GreenDiv, 
-    HeroContent, 
-    HeroSection, 
-    ImageWrapper 
-} from "./Hero.style";
+import * as S from "./Hero.style";
 
 
 const Overlay = styled.div`
@@ -23,27 +17,27 @@ const Hero = () => {
     const myMediaQuery =  window.matchMedia('(min-width: 1000px)')
 
     return ( 
-        <HeroSection>
+        <S.HeroSection>
             <Overlay>
                 { myMediaQuery.matches && (
                     <>
-                        <ImageWrapper>
+                        <S.ImageWrapper>
                             <img src={heroPic} alt="plate of chicken breat" />
-                        </ImageWrapper>
-                        <GreenDiv />
+                        </S.ImageWrapper>
+                        <S.GreenDiv />
                     </>
                 ) }
 
-                <HeroContent>
+                <S.HeroContent>
                     <h1>start your day the right way</h1>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi eos repellendus, corrupti excepturi eum tempora! Praesentium perspiciatis atque al
                     </p>
-                    <Button primary>view our menu</Button>
-                </HeroContent>
+                    <S.Button primary>view our menu</S.Button>
+                </S.HeroContent>
             </Overlay>
 
-        </HeroSection>
+        </S.HeroSection>
     );
 }
  

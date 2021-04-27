@@ -48,34 +48,36 @@ const Slider =  () => {
 
   return (
       <S.Wrapper>
-        <S.Slide>
-          <div className="rotate">
+        <S.SlideGreenDiv />
+        
+        <S.SlideImage>
+          <S.ImagesWrapper className="rotate">
             {data.map((item, index) => (
-              <S.SlideItem key={item.id}
+              <S.ImageItem key={item.id}
                 className={`slide` + item.id}
               >
                 <img src={item.image} alt="" />
-              </S.SlideItem>
+              </S.ImageItem>
             ))}
-          </div>
-        </S.Slide>
+          </S.ImagesWrapper>
+        </S.SlideImage>
 
         <S.SlideContent>
             { data.map((item, index) => (
-                <div 
+                <S.ContentWrapper 
                   key={item.id}
                   className={index === contentCurrent ? "active" : ""}
                 >
                   { index === contentCurrent && (
-                    <S.RealContent className="testing">
+                    <S.Content className="testing">
                       <h3>{ item.name }</h3>
                       <p>{ item.desc }</p>
                       <S.Price>
                         &#36; { item.price }
                       </S.Price>
-                    </S.RealContent>
+                    </S.Content>
                   )}
-                </div>
+                </S.ContentWrapper>
             ))}
         </S.SlideContent>
 

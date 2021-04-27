@@ -6,257 +6,143 @@ export const Wrapper = styled.div`
   background-color: ${({theme}) => theme.background};
   position: relative;
   overflow: hidden;
-  padding-bottom: 5rem;
+  height: 800px;
 
   @media ${bp.tablet} {
     display: flex;
+    height: 600px;
   }
 
   @media ${bp.laptop} {
-    padding-bottom: 17rem;
+    height: 650px;
+    padding-bottom: 5rem;
   }
 
   @media ${bp.desktop} {
-    padding-bottom: 20rem;
+    height: 800px;
   }
 `;
 
-export const Slide = styled.div`
-  width: 400px;
-  height: 400px; 
-  position: relative;
+export const SlideGreenDiv = styled.div`
+  position: absolute;
+  top: -200px;
+  left: -350px;
+  width: 70%;
+  height: 200%;
   z-index: 0;
-  transform: translate(-50%, -40%); 
-  
-  .rotate {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 20px solid ${({theme}) => theme.primary};
-    transform: rotateZ(0deg);
-    transition: all .5s;
-    position: relative;
-  }
+  transform: rotateZ(30deg);
+  background: linear-gradient(to bottom, ${({theme}) => theme.primary}, #3d3d3d);
 
   @media ${bp.phablet} {
-    width: 700px;
-    height: 700px; 
+    top: -250px;
+  }
 
-    .rotate {
-      border: 40px solid ${({theme}) => theme.primary};
-    }
+  @media ${bp.tablet} {
+    width: 500px;
+  }
+`;
+
+export const SlideImage = styled.div`
+  width: 500px;
+  height: 500px; 
+  position: relative;
+  z-index: 0;
+  transform: translate(-50%, -50%); 
+
+  @media ${bp.phablet} {
+    width: 800px;
+    height: 800px; 
   }
 
   @media ${bp.tablet} {
     position: absolute;
-    width: 500px;
-    height: 500px; 
-    
+    width: 700px;
+    height: 700px; 
   }
   @media ${bp.laptop} {
-    width: 800px;
-    height: 800px;
-    
-    .rotate {
-      border: 70px solid ${({theme}) => theme.primary};
-    }
+    width: 900px;
+    height: 900px;
   }
 
   @media ${bp.desktop} {
-    width: 1000px;
-    height: 1000px;
+    width: 1100px;
+    height: 1100px;
   }
 `;
 
-export const SlideItem = styled.div` 
-  position: absolute;
+export const ImagesWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(0deg);
+  transition: all .5s;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+
+  @media ${bp.desktop} {
+    gap: 15rem;
+  }
+`;
+
+export const ImageItem = styled.div` 
   z-index: 2;
   transition: all .5s;
-  transform-origin: center;
-  will-change: transform;
-  width: 200px;
+  display: flex;
 
   img {
+    display: block;
     width: 100%;
-  }
-
-  @media ${bp.phablet} {
-    width: 300px;
-  }
-
-  @media ${bp.tablet} {
-    width: 250px;
-  }
-
-  @media ${bp.laptop} {
-    width: 400px;
+    object-fit: contain;
   }
 
   &.slide1 {
-    top: 55%;
-    left: 70%;
-    transform: rotateZ(0deg);
+    align-items: flex-start;
+    justify-content: flex-start;
 
-    @media ${bp.phablet} {
-      top: 55%;
-      left: 75%;
-    }
-
-    @media ${bp.tablet} {
-      left: 70%;
-    }
-
-    @media ${bp.laptop} {
-      top: 53%;
-      left: 70%;
-    }
-
-    @media ${bp.desktop} {
-      top: 55%;
-      left: 80%;
+    img {
+      transform: rotateZ(180deg);
     }
   }
   
   &.slide2 {
-    top: -30%; 
-    left: 55%;
-    transform: rotate(270deg);
+    align-items: flex-start;
+    justify-content: flex-end;
 
-    @media ${bp.phablet} {
-      top: -25%;
-      left: 55%;
-    }
-
-    @media ${bp.tablet} {
-      top: -30%;
-    }
-
-    @media ${bp.desktop} {
-      top: -25%;
+    img {
+      transform: rotate(270deg);
     }
   }
   
   &.slide3 {
-    top: -10%;
-    left: -25%;
-    transform: rotateZ(180deg);
+    align-items: flex-end;
+    justify-content: flex-start;
 
-    @media ${bp.phablet} {
-      top: 0%;
-      left: -20%;
-    }
-
-    @media ${bp.tablet} {
-      top: -15%;
-      left: -30%;
-    }
-
-    @media ${bp.desktop} {
-      top: 0%;
-      left: -25%;
+    img {
+      transform: rotateZ(90deg);
     }
   }
   
   &.slide4 {
-    top: 75%;
-    left: -10%;
-    transform: rotateZ(90deg);
-
-    @media ${bp.phablet} {
-      top: 80%;
-      left: 0%;
-    }
-
-    @media ${bp.tablet} {
-      top: 75%;
-      left: -10%;
-    }
-
-    @media ${bp.desktop} {
-      top: 80%;
-      left: 0%;
-    }
-  }
-`;
-
-export const ButtonWrapper = styled.div`
-  position: absolute;
-  top: calc(500px / 2 + 90px);
-  left: 70%;
-  transform: translateX(-50%);
-  width: 100px;
-  display: flex;
-  justify-content: space-between;
-
-  & ${Button} {
-    border: 0;
-    border-radius: 0px;
-    transition: all .3s;
-
-    &:hover {
-      background-color: ${({theme}) => theme.primary};
-      color: ${({theme}) => theme.light};
-    }
-  }
-
-  @media ${bp.phablet} {
-    top: 520px;
-    left: 75%;
-  }
-
-  @media ${bp.tablet} {
-    top: 380px;
-    left: 250px;
-  }
-
-  @media ${bp.laptop} {
-    top: 600px;
-    left: 40%;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 `;
 
 export const SlideContent = styled.div`
-  margin-top: -1rem;
+  margin: -6rem 0;
   display: flex;
   flex-flow: column nowrap;
   padding: 0 .5rem;
   
-  & > div {
-    background-color: ${({theme}) => theme.light};
-    border-radius: 10px;
-    box-shadow: 2px 5px 10px rgba(0,0,0,0.15);
-    width: 85%;
-    height: auto;
-    margin: 0 auto;
-    flex: 1 0 100%;
-    opacity: 0;
-    transform: translateY(100vh);
-    transition: opacity .5s;
-
-    &.active {
-      opacity: 1;
-      transform: translateY(0vh);      
-    }
-  }
-
   @media ${bp.phablet} {
-    margin-top: -3rem;
-
-    & > div {
-      width: 70%;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    margin: -22rem 0;
   }
 
   @media ${bp.tablet} {
     margin: 5rem 0 0 auto;
-    flex: 0 1 55%;
-
-    & > div {
-      width: 80%;
-      max-width: 500px;
-    }
+    flex: 0 1 52%;
+    height: 0%;
   }
 
   @media ${bp.laptop} {
@@ -273,7 +159,36 @@ export const SlideContent = styled.div`
   }
 `;
 
-export const RealContent = styled.div`
+export const ContentWrapper = styled.div` 
+  background-color: ${({theme}) => theme.light};
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px rgba(0,0,0,0.15);
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+  flex: 1 0 100%;
+  opacity: 0;
+  transform: translateY(100vh);
+  transition: opacity .5s;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0vh);      
+  }
+
+  @media ${bp.phablet} {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  @media ${bp.tablet} {
+      width: 80%;
+      max-width: 500px;
+  }
+`;
+
+export const Content = styled.div`
   padding: 2.5rem 2rem 2rem;
 
   p {
@@ -291,23 +206,21 @@ export const Price = styled.p`
 
 export const PaginationWrapper = styled.div`
   position: absolute;
-  top: 50px;
-  left: 75%;
+  top: 80px;
+  left: 70%;
 
-  @media ${bp.phablet} {
-    top: 500px;
+  @media ${bp.tablet} {
+    top: 480px;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  @media ${bp.tablet} {
-    top: 370px;
-    left: 25%;
+  @media ${bp.laptop} {
+    top: 530px;
   }
 
-  @media ${bp.laptop} {
-    top: 74%;
-    left: 50%;
+  @media ${bp.desktop} {
+    top: 650px;
   }
 `;
 
@@ -322,26 +235,8 @@ export const Pagination = styled.div`
     border: 0;
     padding: .8rem;
     display: inline;
+    font-size: 1.2rem;
   }
-
-  @media ${bp.phablet} {
-    & ${Button} {
-      position: absolute;
-      border: 0;
-      padding: .8rem;
-      display: inline;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.5rem;
-
-      &:first-of-type {
-        left: -70px;
-      }
-
-      &:last-of-type {
-        right: -70px;
-      }
-    }
 
     @media ${bp.tablet} {
       & ${Button} {
@@ -389,7 +284,7 @@ export const Thumbnails = styled.div`
   justify-content: space-between;
   margin-bottom: 1rem;
 
-  @media ${bp.phablet} {
+  @media ${bp.tablet} {
     top: 520px;
     left: 20%;
     width: 220px;

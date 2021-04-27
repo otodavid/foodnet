@@ -19,7 +19,7 @@ export const HeaderSection = styled.header`
     }
 
     @media ${bp.laptop} {
-        width: 75vw;
+        width: 83vw;
         padding: 1.5rem 0rem 0 6rem;
     }
 
@@ -79,6 +79,10 @@ export const Nav = styled.ul`
         padding-right: 2rem;
         width: 100%;
         background-color: transparent;
+
+        & li {
+            margin-bottom: 0;
+        }
     }
 `;
 
@@ -92,10 +96,6 @@ export const NavLink = styled(Link)`
         color: ${({theme}) => theme.light};
         font-weight: 500;
         position: relative;
-
-        &:hover {
-            color: ${({theme}) => theme.secondary}
-        }
         
         &::after {
             position: absolute;
@@ -115,6 +115,10 @@ export const NavLink = styled(Link)`
 
     @media ${bp.laptop} {
         color: ${({theme}) => theme.text};
+
+        &:hover {
+            color: ${({theme}) => theme.secondary}
+        }
     }
 `;
 

@@ -44,12 +44,18 @@ export const ImageWrapper = styled.div`
 
 export const GreenDiv = styled.div`
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 25vw;
-    height: 100%;
+    top: -100px;
+    right: -50px;
+    width: 45%;
+    height: 200%;
     z-index: 0;
-    background-color: ${({theme}) => theme.primary} ;
+    transform: rotateZ(35deg);
+    background: linear-gradient(to bottom, ${({theme}) => theme.primary}, #3d3d3d);
+
+    @media ${bp.desktop} {
+        right: -200px;
+        width: 50%;
+    }
 `;
 
 export const HeroContent = styled.div`
@@ -63,7 +69,6 @@ export const HeroContent = styled.div`
         margin: 0 auto;
 
         @media ${bp.desktop} {
-            margin: 0;
             padding-left: 0;
         }
     }
@@ -74,6 +79,7 @@ export const HeroContent = styled.div`
 
         @media ${bp.laptop} {
             color: ${({theme}) => theme.secondary};
+            margin: 0;
         }
     }
 
@@ -82,7 +88,7 @@ export const HeroContent = styled.div`
 
         @media ${bp.laptop} {
             margin: 1rem 0;
-            padding-left: 0;
+            width: 91%;
         }
     }
 

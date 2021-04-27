@@ -5,6 +5,8 @@ export const ProcessSection = styled.section`
     text-align: center;
     padding: 5rem 2rem;
     background-color: ${({theme}) => theme.light};
+    position: relative;
+    z-index: 99;
 
     & p, h2 {
         max-width: 500px;
