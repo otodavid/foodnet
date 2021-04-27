@@ -58,12 +58,11 @@ export const GlobalStyles = createGlobalStyle`
 
     button {
         border: 0;
-        border-radius: 4px;
         display: block;
         font-family: inherit;
         font-size: var(--body-text);
         font-weight: 500;
-        background-color: transparent;
+        background: transparent;
         cursor: pointer;
     }
 

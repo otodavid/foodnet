@@ -44,6 +44,10 @@ const Slider =  () => {
       setContentCurrent(resetContent);
     }
   }
+
+  const handleAnimation = (e) => {
+    e.target.style.animationPlayState === "paused" ? console.log("will run") : console.log("will not run");
+  }
   
 
   return (
@@ -56,7 +60,11 @@ const Slider =  () => {
               <S.ImageItem key={item.id}
                 className={`slide` + item.id}
               >
-                <img src={item.image} alt="" />
+                <img 
+                  src={item.image} 
+                  alt="" 
+                  onMouseOver={handleAnimation} 
+                />
               </S.ImageItem>
             ))}
           </S.ImagesWrapper>
@@ -83,13 +91,13 @@ const Slider =  () => {
 
         <S.PaginationWrapper>
           <S.Pagination>
-            <S.Thumbnails>
+            <S.ThumbnailsWrapper>
             {data.map(item => (
-              <S.Nails key={item.id} onClick={(e) => test(e, item.id)}>
+              <S.Thumbnail key={item.id} onClick={(e) => test(e, item.id)}>
                 <img src={item.image} alt="" width="40" />
-              </S.Nails>
+              </S.Thumbnail>
             ))}
-            </S.Thumbnails>
+            </S.ThumbnailsWrapper>
 
             <Button onClick={prevSlide}>
               <i className="fas fa-chevron-left"></i>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { bp } from "../../styles/breakpoints";
 import { Button } from '../Hero/Hero.style';
 
@@ -85,6 +85,16 @@ export const ImagesWrapper = styled.div`
   }
 `;
 
+const spin = keyframes`
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+`
+
 export const ImageItem = styled.div` 
   z-index: 2;
   transition: all .5s;
@@ -94,6 +104,13 @@ export const ImageItem = styled.div`
     display: block;
     width: 100%;
     object-fit: contain;
+    cursor: pointer;
+    animation: ${spin} 5s linear infinite;
+    animation-play-state: paused;
+    
+    &:hover {
+      animation-play-state: running;
+    }
   }
 
   &.slide1 {
@@ -169,11 +186,16 @@ export const ContentWrapper = styled.div`
   flex: 1 0 100%;
   opacity: 0;
   transform: translateY(100vh);
-  transition: opacity .5s;
+  transition: opacity, transform .5s;
 
   &.active {
     opacity: 1;
     transform: translateY(0vh);      
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 8px 15px 3px rgba(0,0,0,0.15);
   }
 
   @media ${bp.phablet} {
@@ -236,6 +258,13 @@ export const Pagination = styled.div`
     padding: .8rem;
     display: inline;
     font-size: 1.2rem;
+    border-radius: 0;
+
+    &:hover {
+      background-color: ${({theme}) => theme.primary};
+      color: ${({theme}) => theme.light};
+
+    }
   }
 
     @media ${bp.tablet} {
@@ -275,7 +304,7 @@ export const Pagination = styled.div`
     }
 `;
 
-export const Thumbnails = styled.div`
+export const ThumbnailsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column wrap;
@@ -293,6 +322,8 @@ export const Thumbnails = styled.div`
     margin-bottom: 0;
   }
 `;
-export const Nails = styled.div`
-
+export const Thumbnail = styled.div`
+  &:hover {  
+    cursor: pointer;
+  }
 `;

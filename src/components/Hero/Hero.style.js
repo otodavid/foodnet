@@ -50,7 +50,7 @@ export const GreenDiv = styled.div`
     height: 200%;
     z-index: 0;
     transform: rotateZ(35deg);
-    background: linear-gradient(to bottom, ${({theme}) => theme.primary}, #3d3d3d);
+    background: linear-gradient(to bottom, ${({theme}) => theme.primary}, ${({theme}) => theme.secondary});
 
     @media ${bp.desktop} {
         right: -200px;
@@ -104,7 +104,6 @@ export const HeroContent = styled.div`
 `;
 
 export const Button = styled.button`
-    background: transparent;
     padding: .8rem 1.6rem;
     border: 1px solid ${({theme}) => theme.primary};
     border-radius: 50px;
@@ -113,7 +112,12 @@ export const Button = styled.button`
 
     ${({primary}) => primary && css`
             color: ${({theme}) => theme.light};
-            background-color: ${({theme}) => theme.primary};
+            background: ${({theme}) => theme.primary};
+
+            &:hover {
+                background: linear-gradient(to right, ${({theme}) => theme.primary}, ${({theme}) => theme.secondary});
+                border-color: transparent;
+            }
         `
     }
 

@@ -6,6 +6,13 @@ export const CardContainer = styled.div`
     background-color: ${({theme}) => theme.background};
     border-radius: 10px;
     box-shadow: 3px 6px 10px 0px rgba(0,0,0,0.1);
+    transform: scale(1);
+    transition: transform .4s;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 8px 13px rgba(0,0,0,0.15);
+    }
 `;
 
 export const SvgWrapper = styled.div`
@@ -24,9 +31,3 @@ export const CardTitle = styled.p`
     margin-bottom: .5rem;
     color: ${({theme}) => theme.secondary};
 `;
-// export const CardContainer = styled.div`
-
-// `;
-// export const CardContainer = styled.div`
-
-// `;
