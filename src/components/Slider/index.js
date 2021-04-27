@@ -79,13 +79,6 @@ const Slider =  () => {
             ))}
         </S.SlideContent>
 
-        {/* <S.ButtonWrapper>
-         
-        </S.ButtonWrapper> */}
-        
-        
-
-
         <S.PaginationWrapper>
           <S.Pagination>
             <S.Thumbnails>

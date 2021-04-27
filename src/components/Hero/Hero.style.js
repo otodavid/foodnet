@@ -31,15 +31,14 @@ export const ImageWrapper = styled.div`
             margin-right: 10%;
             margin-left: auto;
         }
-
     }
+
     @media ${bp.desktop} {
         
         img {
             width: 85%;
             height: 85%;
         }
-
     }
 `;
 
@@ -62,6 +61,11 @@ export const HeroContent = styled.div`
     & h1, & p {
         max-width: 500px;
         margin: 0 auto;
+
+        @media ${bp.laptop} {
+            margin: 0;
+            padding-left: 0;
+        }
     }
 
     h1 {
@@ -75,12 +79,18 @@ export const HeroContent = styled.div`
 
     p {
         margin: 1rem auto;
+
+        @media ${bp.laptop} {
+            margin: 1rem 0;
+            padding-left: 0;
+        }
     }
 
     @media ${bp.laptop} {
         flex: 1 1 50%;
         padding: 15rem 1rem 7rem 6rem;
         text-align: left;
+        padding-left: 0;
     }
 
     @media ${bp.desktop} {
