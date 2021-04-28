@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { bp } from "../../styles/breakpoints";
 import { Button } from "../Hero/Hero.style";
@@ -46,6 +47,10 @@ export const TextField = styled.input.attrs(props => ({
     width: 100%;
     color: ${({theme}) => theme.text};
 
+    &:hover, &:focus {
+        box-shadow: 0 0 0 1px ${({theme}) => theme.primary};
+    }
+
     @media ${bp.tablet} {
         flex: 1 0 70%;
         margin-right: 1.5rem;
@@ -80,9 +85,14 @@ export const FooterMenu = styled.ul`
     }
 `;
 
-export const FooterLink = styled.div`
+export const FooterLink = styled(Link)`
+    color: ${({theme}) => theme.text};
     padding: .5rem;
     font-weight: 500;
+
+    &:hover {
+        color: ${({theme}) => theme.primary};
+    }
 `;
 
 export const SocialIcons = styled.div`
@@ -93,9 +103,13 @@ export const SocialIcons = styled.div`
     margin: 0 auto;
     color: ${({theme}) => theme.secondary};
 
-
     i {
         font-size: 20px;
+
+        &:hover {
+            color: ${({theme}) => theme.primary};
+            cursor: pointer;
+        }
     }
 
     @media ${bp.tablet} {

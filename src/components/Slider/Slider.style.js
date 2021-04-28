@@ -186,7 +186,7 @@ export const ContentWrapper = styled.div`
   flex: 1 0 100%;
   opacity: 0;
   transform: translateY(100vh);
-  transition: opacity, transform .5s;
+  transition: all .5s;
 
   &.active {
     opacity: 1;
@@ -194,7 +194,7 @@ export const ContentWrapper = styled.div`
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
     box-shadow: 5px 8px 15px 3px rgba(0,0,0,0.15);
   }
 

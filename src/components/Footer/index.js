@@ -1,65 +1,54 @@
 import { Logo } from "../Header/Header.style"
 import { Button } from "../Hero/Hero.style"
-import { 
-    Copyright,
-    FooterBottom,
-    FooterLink,
-    FooterMenu,
-    FooterSection, 
-    Newsletter,
-    NewsletterIntro,
-    SocialIcons,
-    SubscribeForm,
-    TextField
-} from "./Footer.style";
+import * as S from "./Footer.style";
 
 const Footer = () => {
     return ( 
-        <FooterSection>
-            <Newsletter>
-                <NewsletterIntro>
+        <S.FooterSection>
+            <S.Newsletter>
+                <S.NewsletterIntro>
                     <h3>Get Notified</h3>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque harum nihil sunt quasi veritatis nemo necessitatibus perferendis animi dicta, ratio
                     </p>
-                </NewsletterIntro>
+                </S.NewsletterIntro>
                 
-                <SubscribeForm>
-                    <TextField placeholder="Email Address" />
+                <S.SubscribeForm>
+                    <S.TextField placeholder="Email Address" />
                     <Button primary>Subscribe</Button>
-                </SubscribeForm>
-            </Newsletter>
+                </S.SubscribeForm>
+            </S.Newsletter>
 
-            <FooterBottom>
+            <S.FooterBottom>
                 <Logo to="/">foodnet</Logo>
-                <FooterMenu>
+                <S.FooterMenu>
                     <li>
-                        <FooterLink>Home</FooterLink>
+                        <S.FooterLink>Home</S.FooterLink>
                     </li>
                     <li>
-                        <FooterLink>Services</FooterLink>
+                        <S.FooterLink>Services</S.FooterLink>
                     </li>
                     <li>
-                        <FooterLink>Our Menu</FooterLink>
+                        <S.FooterLink>Our Menu</S.FooterLink>
                     </li>
                     <li>
-                        <FooterLink>Contact</FooterLink>
+                        <S.FooterLink>Contact</S.FooterLink>
                     </li>
-                </FooterMenu>
-                <SocialIcons>
+                </S.FooterMenu>
+                <S.SocialIcons>
                     <i className="fab fa-facebook-f"></i>
                     <i className="fab fa-instagram"></i>
                     <i className="fab fa-twitter"></i>
-                </SocialIcons>
-            </FooterBottom>
-            <Copyright>
+                </S.SocialIcons>
+            </S.FooterBottom>
+            <S.Copyright>
                     <p>
                         Made with &nbsp;
                         <span><i className="fas fa-heart"></i></span> &nbsp;
                         by Oloruntomi David
                     </p>
-                </Copyright>
-        </FooterSection>
+                </S.Copyright>
+        </S.FooterSection>
      );
 }
  

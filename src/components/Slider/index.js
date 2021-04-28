@@ -1,4 +1,3 @@
-// Import Swiper React components
 import { useState } from 'react';
 import {data} from './data';
 import * as S from './Slider.style';
@@ -31,7 +30,7 @@ const Slider =  () => {
     }
   }
 
-  const test = (e, id) => {
+  const thumbnailNavigation = (e, id) => {
     if(current <= 270) {
       const rotate = document.querySelector(".rotate");
       const reset = id - 1;
@@ -45,11 +44,6 @@ const Slider =  () => {
     }
   }
 
-  const handleAnimation = (e) => {
-    e.target.style.animationPlayState === "paused" ? console.log("will run") : console.log("will not run");
-  }
-  
-
   return (
       <S.Wrapper>
         <S.SlideGreenDiv />
@@ -60,11 +54,7 @@ const Slider =  () => {
               <S.ImageItem key={item.id}
                 className={`slide` + item.id}
               >
-                <img 
-                  src={item.image} 
-                  alt="" 
-                  onMouseOver={handleAnimation} 
-                />
+                <img src={item.image} alt="" />
               </S.ImageItem>
             ))}
           </S.ImagesWrapper>
@@ -77,7 +67,7 @@ const Slider =  () => {
                   className={index === contentCurrent ? "active" : ""}
                 >
                   { index === contentCurrent && (
-                    <S.Content className="testing">
+                    <S.Content>
                       <h3>{ item.name }</h3>
                       <p>{ item.desc }</p>
                       <S.Price>
@@ -93,7 +83,10 @@ const Slider =  () => {
           <S.Pagination>
             <S.ThumbnailsWrapper>
             {data.map(item => (
-              <S.Thumbnail key={item.id} onClick={(e) => test(e, item.id)}>
+              <S.Thumbnail 
+                key={item.id} 
+                onClick={(e) => thumbnailNavigation(e, item.id)}
+              >
                 <img src={item.image} alt="" width="40" />
               </S.Thumbnail>
             ))}
