@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { bp } from "../../styles/breakpoints";
-import { Button } from '../Hero/Hero.style';
+import { Button } from "../Button/style";
 
 export const Wrapper = styled.div`
   background-color: ${({theme}) => theme.background};
@@ -78,6 +78,9 @@ export const ImagesWrapper = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "slide3 slide2"
+    "slide4 slide1";
   gap: 7rem;
 
   @media ${bp.desktop} {
@@ -113,7 +116,8 @@ export const ImageItem = styled.div`
     }
   }
 
-  &.slide1 {
+  &.item1 {
+    grid-area: slide1;
     align-items: flex-start;
     justify-content: flex-start;
 
@@ -122,7 +126,8 @@ export const ImageItem = styled.div`
     }
   }
   
-  &.slide2 {
+  &.item2 {
+    grid-area: slide2;
     align-items: flex-start;
     justify-content: flex-end;
 
@@ -131,7 +136,8 @@ export const ImageItem = styled.div`
     }
   }
   
-  &.slide3 {
+  &.item3 {
+    grid-area: slide3;
     align-items: flex-end;
     justify-content: flex-start;
 
@@ -140,7 +146,8 @@ export const ImageItem = styled.div`
     }
   }
   
-  &.slide4 {
+  &.item4 {
+    grid-area: slide4;
     align-items: flex-end;
     justify-content: flex-end;
   }
@@ -186,7 +193,7 @@ export const ContentWrapper = styled.div`
   flex: 1 0 100%;
   opacity: 0;
   transform: translateY(100vh);
-  transition: all .5s;
+  transition: transform, opacity .5s ease-in-out;
 
   &.active {
     opacity: 1;
@@ -194,7 +201,6 @@ export const ContentWrapper = styled.div`
   }
 
   &:hover {
-    transform: scale(1.02);
     box-shadow: 5px 8px 15px 3px rgba(0,0,0,0.15);
   }
 
@@ -262,7 +268,7 @@ export const Pagination = styled.div`
 
     &:hover {
       background-color: ${({theme}) => theme.primary.main};
-      color: ${({theme}) => theme.neutral.light};
+      color: ${({theme}) => theme.text.aux};
 
     }
   }
@@ -323,6 +329,14 @@ export const ThumbnailsWrapper = styled.div`
   }
 `;
 export const Thumbnail = styled.div`
+  & img {
+    position: relative;
+  
+    &.active {
+      filter: brightness(0.4);
+    }
+  }
+
   &:hover {  
     cursor: pointer;
   }

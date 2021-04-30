@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as S from "./Header.style";
+import * as S from "./style";
 
 const Header = ({ toggleTheme, theme }) => {
     const [ isMenuOpen, setIsMenuOpen ] = useState(false);

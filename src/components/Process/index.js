@@ -1,4 +1,4 @@
-import { CardList, Heading2, ProcessSection } from "./Pocess.style";
+import { CardList, Heading2, ProcessSection } from "./style";
 import { data } from './data';
 import Card from "../Card";
 

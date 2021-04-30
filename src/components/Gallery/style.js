@@ -11,7 +11,6 @@ export const GallerySection = styled.div`
         "img-3 img-5 img-5"
         "img-9 img-9 img-1"
         "img-10 img-7 img-7";
-    gap: .5rem;
 
     @media ${bp.tablet} {
         grid-template-columns: repeat(4, 1fr);

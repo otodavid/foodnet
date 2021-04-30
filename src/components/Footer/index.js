@@ -1,6 +1,6 @@
-import { Logo } from "../Header/Header.style"
-import { Button } from "../Hero/Hero.style"
-import * as S from "./Footer.style";
+import { Button } from "../Button/style";
+import { Logo } from "../Header/style"
+import * as S from "./style";
 
 const Footer = () => {
     return ( 

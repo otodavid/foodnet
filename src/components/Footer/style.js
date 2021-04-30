@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { bp } from "../../styles/breakpoints";
-import { Button } from "../Hero/Hero.style";
+import { Button } from "../Button/style";
 
 export const FooterSection = styled.section`
     padding-top: 5rem;
@@ -46,6 +46,7 @@ export const TextField = styled.input.attrs(props => ({
     border-radius: 50px;
     width: 100%;
     color: ${({theme}) => theme.text.main};
+    transition: box-shadow .5s;
 
     &:hover, &:focus {
         box-shadow: 0 0 0 1px ${({theme}) => theme.primary.main};

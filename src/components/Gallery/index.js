@@ -2,7 +2,7 @@ import { data } from './data';
 import {
     GalleryContent,
     GallerySection, 
-} from './Gallery.style.js';
+} from './style.js';
 
 const Gallery = () => {
     return ( 

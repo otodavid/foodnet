@@ -3,7 +3,7 @@ import {
     SvgWrapper,
     CardTitle,
 
-} from "./Card.style";
+} from "./style";
 
 const Card = ({ data }) => {
     return ( 

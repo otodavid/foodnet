@@ -12,7 +12,7 @@ export const lightTheme = {
         aux: "#fff",
     },
     neutral: {
-        light: "#f9f9f9",
+        light: "#f5f5f5",
         dark: "#141414",
     },
 }

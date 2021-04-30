@@ -149,7 +149,7 @@ export const MenuIcon = styled.button`
 `;
 
 export const ThemeChanger = styled.button`
-    color: ${({theme}) => theme.neutral.light};
+    color: ${({theme}) => theme.text.aux};
 
     @media ${bp.laptop} {
         color: ${({theme}) => theme.neutral.dark};
