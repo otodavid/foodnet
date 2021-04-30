@@ -5,12 +5,11 @@ import { bp } from "../../styles/breakpoints";
 export const HeroSection = styled.div`
     position: relative;
     background: url(${bgImage}) center / cover no-repeat;
-    color: ${({theme}) => theme.light};
 
     @media ${bp.laptop} {
         background: none;
         background-color: ${({theme}) => theme.background};
-        color: ${({theme}) => theme.text};
+        color: ${({theme}) => theme.text.main};
     }
 `;
 
@@ -50,7 +49,7 @@ export const GreenDiv = styled.div`
     height: 200%;
     z-index: 0;
     transform: rotateZ(35deg);
-    background: linear-gradient(to bottom, ${({theme}) => theme.primary}, ${({theme}) => theme.secondary});
+    background: linear-gradient(to bottom, ${({theme}) => theme.primary.main}, #0a0a0a);
 
     @media ${bp.desktop} {
         right: -200px;
@@ -75,7 +74,7 @@ export const HeroContent = styled.div`
 
     h1 {
         text-transform: capitalize;
-        color: ${({theme}) => theme.light};
+        color: ${({theme}) => theme.text.aux};
 
         @media ${bp.laptop} {
             color: ${({theme}) => theme.secondary};
@@ -85,10 +84,12 @@ export const HeroContent = styled.div`
 
     p {
         margin: 1rem auto;
+        color: ${({theme}) => theme.text.aux};
 
         @media ${bp.laptop} {
             margin: 1rem 0;
             width: 91%;
+            color: ${({theme}) => theme.text.main};
         }
     }
 
@@ -105,18 +106,18 @@ export const HeroContent = styled.div`
 
 export const Button = styled.button`
     padding: .8rem 1.6rem;
-    border: 1px solid ${({theme}) => theme.primary};
+    border: 2px solid ${({theme}) => theme.primary.main};
     border-radius: 50px;
-    color: ${({theme}) => theme.primary};
+    color: ${({theme}) => theme.primary.main};
     text-transform: capitalize;
 
     ${({primary}) => primary && css`
-            color: ${({theme}) => theme.light};
-            background: ${({theme}) => theme.primary};
+            color: ${({theme}) => theme.text.aux};
+            background: ${({theme}) => theme.primary.main};
 
             &:hover {
-                background: linear-gradient(to right, ${({theme}) => theme.primary}, ${({theme}) => theme.secondary});
-                border-color: transparent;
+                background: transparent;
+                color: ${({theme}) => theme.primary.main};
             }
         `
     }

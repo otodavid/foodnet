@@ -4,24 +4,18 @@ export const useChangeTheme = () => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light")
+    theme === "light" ? setThemeMode("dark") : setThemeMode("light");
   }
 
   const setThemeMode = (mode) => {
-    setTheme(mode);
     localStorage.setItem("themeMode", mode);
+    setTheme(mode);
   }
 
   useEffect(() => {
-    const  localTheme = localStorage.getItem("themeMode");
-    localTheme ? setThemeMode("light") : setThemeMode("dark");
-
-   
-    
-    // return () => {
-    //   // cleanup
-    // }
-  }, [theme])
+    const localTheme = localStorage.getItem("themeMode");
+    localTheme ? setThemeMode(localTheme) : setThemeMode("light");
+  }, [])
 
   return [ theme, toggleTheme ];
 }

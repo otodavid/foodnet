@@ -15,9 +15,10 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Exo 2', Arial, sans-serif;
         background-color: ${props => props.theme.background};
         font-size: var(--body-text);
-        color: ${({theme}) => theme.text};
+        color: ${({theme}) => theme.text.main};
         font-weight: 400;
         line-height: 1.5;
+        transition: all .5s ease-in-out;
     }
 
     a {
@@ -29,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
     h1, h2, h3 {
         line-height: 1.1;
         margin-bottom: .3em;
-        color: ${({theme}) => theme.secondary};
+        color: ${({theme}) => theme.text.secondary};
     }
 
     h1 {

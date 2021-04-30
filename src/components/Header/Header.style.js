@@ -47,11 +47,12 @@ export const Overlay = styled.div`
         width: auto;
         height: auto;
         transform: translateX(0vw);
+        flex: 2;
     }
 `;
 
 export const Logo = styled(Link)`
-    color: ${({theme}) => theme.primary};
+    color: ${({theme}) => theme.primary.main};
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -62,7 +63,7 @@ export const Nav = styled.ul`
     width: 60%;
     height: 100%;
     padding: 100px 2rem;
-    background-color: ${({theme}) => theme.light};
+    background-color: ${({theme}) => theme.neutral.light};
     transition: box-shadow .3s;
 
     & li {
@@ -75,6 +76,7 @@ export const Nav = styled.ul`
 
     @media ${bp.tablet} {
         display: flex;
+        justify-content: flex-end;
         padding: 0;
         padding-right: 2rem;
         width: 100%;
@@ -89,11 +91,11 @@ export const Nav = styled.ul`
 export const NavLink = styled(Link)`
     padding: .5rem 1rem;
     font-size: 24px;
-    color: ${({theme}) => theme.text};
+    color: ${({theme}) => theme.text.main};
 
     @media ${bp.tablet} {
         font-size: 1rem;
-        color: ${({theme}) => theme.light};
+        color: ${({theme}) => theme.text.aux};
         font-weight: 500;
         position: relative;
         
@@ -104,7 +106,7 @@ export const NavLink = styled(Link)`
             left: 1rem;
             width: 0;
             height: 2px;
-            background-color: ${({theme}) => theme.primary};
+            background-color: ${({theme}) => theme.primary.main};
             transition: width .3s ease;
         }
 
@@ -114,25 +116,31 @@ export const NavLink = styled(Link)`
     }
 
     @media ${bp.laptop} {
-        color: ${({theme}) => theme.text};
+        color: ${({theme}) => theme.text.main};
 
         &:hover {
-            color: ${({theme}) => theme.secondary}
+            color: ${({theme}) => theme.text.secondary}
         }
     }
+`;
+
+export const ControlBtns = styled.div`
+    flex: 0 1 60px;
+    display: flex;
+    justify-content: space-between;
 `;
 
 export const MenuIcon = styled.button` 
     position: relative;
     z-index: 5;
-    color: ${({theme}) => theme.light};
+    color: ${({theme}) => theme.text.aux};
 
     & i {
         font-size: 20px;
     }
 
     & .fa-times {
-        color: ${({theme}) => theme.text};
+        color: ${({theme}) => theme.text.secondary};
     }
 
     @media ${bp.tablet} {
@@ -140,6 +148,10 @@ export const MenuIcon = styled.button`
     }
 `;
 
+export const ThemeChanger = styled.button`
+    color: ${({theme}) => theme.neutral.light};
 
-
-NavLink.displayName = "NavLink";
+    @media ${bp.laptop} {
+        color: ${({theme}) => theme.neutral.dark};
+    }
+`;

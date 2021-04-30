@@ -42,13 +42,13 @@ export const SubscribeForm = styled.div`
 export const TextField = styled.input.attrs(props => ({
     type: props.type || "text",
 }))`
-    border: 2px solid ${({theme}) => theme.primary};
+    border: 2px solid ${({theme}) => theme.primary.main};
     border-radius: 50px;
     width: 100%;
-    color: ${({theme}) => theme.text};
+    color: ${({theme}) => theme.text.main};
 
     &:hover, &:focus {
-        box-shadow: 0 0 0 1px ${({theme}) => theme.primary};
+        box-shadow: 0 0 0 1px ${({theme}) => theme.primary.main};
     }
 
     @media ${bp.tablet} {
@@ -86,12 +86,12 @@ export const FooterMenu = styled.ul`
 `;
 
 export const FooterLink = styled(Link)`
-    color: ${({theme}) => theme.text};
+    color: ${({theme}) => theme.text.main};
     padding: .5rem;
     font-weight: 500;
 
     &:hover {
-        color: ${({theme}) => theme.primary};
+        color: ${({theme}) => theme.primary.main};
     }
 `;
 
@@ -107,7 +107,7 @@ export const SocialIcons = styled.div`
         font-size: 20px;
 
         &:hover {
-            color: ${({theme}) => theme.primary};
+            color: ${({theme}) => theme.primary.main};
             cursor: pointer;
         }
     }
@@ -121,7 +121,7 @@ export const Copyright = styled.div`
     width: 100%;
     padding: 2rem 0 3rem;
     text-align: center;
-    background: #ecf0bc;
-    color: ${({theme}) => theme.secondary}; 
-    border-top: 1px solid rgb(255,255,255,0.1);
+    background-color: ${({theme}) => theme.neutral.light};
+    /* background: #ecf0bc; */
+    color: ${({theme}) => theme.text.secondary}; 
 `;

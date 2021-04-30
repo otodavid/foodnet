@@ -23,16 +23,16 @@ const Footer = () => {
                 <Logo to="/">foodnet</Logo>
                 <S.FooterMenu>
                     <li>
-                        <S.FooterLink>Home</S.FooterLink>
+                        <S.FooterLink to="/">Home</S.FooterLink>
                     </li>
                     <li>
-                        <S.FooterLink>Services</S.FooterLink>
+                        <S.FooterLink to="/">Services</S.FooterLink>
                     </li>
                     <li>
-                        <S.FooterLink>Our Menu</S.FooterLink>
+                        <S.FooterLink to="/">Our Menu</S.FooterLink>
                     </li>
                     <li>
-                        <S.FooterLink>Contact</S.FooterLink>
+                        <S.FooterLink to="/">Contact</S.FooterLink>
                     </li>
                 </S.FooterMenu>
                 <S.SocialIcons>

@@ -21,12 +21,12 @@ export const SvgWrapper = styled.div`
     svg {
         width: 50px;
         height: 50px;
-        fill: ${({theme}) => theme.primary};
+        fill: ${({theme}) => theme.primary.main};
     }
 `;
 export const CardTitle = styled.p`
     font-weight: 500;
     font-size: 20px;
     margin-bottom: .5rem;
-    color: ${({theme}) => theme.secondary};
+    color: ${({theme}) => theme.text.secondary};
 `;

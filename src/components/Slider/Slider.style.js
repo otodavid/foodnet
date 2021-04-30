@@ -31,7 +31,7 @@ export const SlideGreenDiv = styled.div`
   height: 200%;
   z-index: 0;
   transform: rotateZ(30deg);
-  background: linear-gradient(to bottom, ${({theme}) => theme.primary}, #3d3d3d);
+  background: linear-gradient(to bottom, ${({theme}) => theme.primary.main}, #0a0a0a);
 
   @media ${bp.phablet} {
     top: -250px;
@@ -177,7 +177,7 @@ export const SlideContent = styled.div`
 `;
 
 export const ContentWrapper = styled.div` 
-  background-color: ${({theme}) => theme.light};
+  background-color: ${({theme}) => theme.neutral.light};
   border-radius: 10px;
   box-shadow: 2px 5px 10px rgba(0,0,0,0.15);
   width: 85%;
@@ -220,7 +220,7 @@ export const Content = styled.div`
 
 export const Price = styled.p`
   font-size: 22px;
-  color: ${({theme}) => theme.primary};
+  color: ${({theme}) => theme.primary.main};
   font-weight: 600;
   text-align: right;
   padding-top: 1rem;
@@ -261,8 +261,8 @@ export const Pagination = styled.div`
     border-radius: 0;
 
     &:hover {
-      background-color: ${({theme}) => theme.primary};
-      color: ${({theme}) => theme.light};
+      background-color: ${({theme}) => theme.primary.main};
+      color: ${({theme}) => theme.neutral.light};
 
     }
   }

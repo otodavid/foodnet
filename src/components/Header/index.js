@@ -1,14 +1,7 @@
 import { useState } from "react";
-import { 
-    HeaderSection, 
-    Logo, 
-    MenuIcon, 
-    Nav, 
-    NavLink, 
-    Overlay
-} from "./Header.style";
+import * as S from "./Header.style";
 
-const Header = () => {
+const Header = ({ toggleTheme, theme }) => {
     const [ isMenuOpen, setIsMenuOpen ] = useState(false);
 
     const handleMenu = (e) => {
@@ -27,35 +20,43 @@ const Header = () => {
     }
     
     return ( 
-        <HeaderSection>
-            <Logo to="/">foodnet</Logo>
+        <S.HeaderSection>
+            <S.Logo to="/">foodnet</S.Logo>
             
-            <Overlay
+            <S.Overlay
                 className={isMenuOpen ? "active" : ''}
                 onClick={handleMenu}
             >
-                <Nav>
+                <S.Nav>
                     <li>
-                        <NavLink to="/">Home</NavLink>
+                        <S.NavLink to="/">Home</S.NavLink>
                     </li>
                     <li>
-                        <NavLink to="/">Services</NavLink>
+                        <S.NavLink to="/">Services</S.NavLink>
                     </li>
                     <li>
-                        <NavLink to="/">Our Menu</NavLink>
+                        <S.NavLink to="/">Our Menu</S.NavLink>
                     </li>
                     <li>
-                        <NavLink to="/">Contact</NavLink>
+                        <S.NavLink to="/">Contact</S.NavLink>
                     </li>
-                </Nav>
-            </Overlay>
+                </S.Nav>
+            </S.Overlay>
             
-            <MenuIcon onClick={handleMenu}>
-                <i 
-                    className={ isMenuOpen ? "fas fa-times" : "fas fa-bars"}
-                ></i>
-            </MenuIcon>
-        </HeaderSection>
+            <S.ControlBtns>
+                <S.MenuIcon onClick={handleMenu}>
+                    <i 
+                        className={ isMenuOpen ? "fas fa-times" : "fas fa-bars"}
+                    ></i>
+                </S.MenuIcon>
+
+                <S.ThemeChanger onClick={toggleTheme}>
+                    { theme === "light" ?  <i className="fas fa-sun"></i> : 
+                    <i className="fas fa-moon"></i> }
+                   
+                </S.ThemeChanger>
+            </S.ControlBtns>
+        </S.HeaderSection>
      );
 }
  

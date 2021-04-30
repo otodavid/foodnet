@@ -14,7 +14,7 @@ const Overlay = styled.div`
 `;
 
 const Hero = () => {
-    const myMediaQuery =  window.matchMedia('(min-width: 1000px)')
+    const myMediaQuery =  window.matchMedia('(min-width: 1000px)');
 
     return ( 
         <S.HeroSection>
