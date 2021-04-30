@@ -1,10 +1,11 @@
+import { Link as SmoothLink } from "react-scroll";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { bp } from "../../styles/breakpoints";
 
 export const HeaderSection = styled.header`
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: 0;
     width: 100%;
     display: flex;
@@ -12,15 +13,16 @@ export const HeaderSection = styled.header`
     align-items: center;
     padding: 1.5rem 2.5rem;
     z-index: 4;
+    background-color: ${({theme}) => theme.neutral.light};
 
     @media ${bp.tablet} {
-        top: 30px;
-        padding: 1.5rem 2rem 0 4rem;
+        padding: 1.5rem 2rem 1.5rem 4rem;
     }
 
     @media ${bp.laptop} {
         width: 83vw;
-        padding: 1.5rem 0rem 0 6rem;
+        padding: 1.5rem 0rem 1.5rem 6rem;
+        background-color: transparent;
     }
 
     @media ${bp.desktop} {
@@ -56,6 +58,7 @@ export const Logo = styled(Link)`
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.5rem;
+    cursor: pointer;
 `; 
 
 export const Nav = styled.ul`
@@ -81,6 +84,7 @@ export const Nav = styled.ul`
         padding-right: 2rem;
         width: 100%;
         background-color: transparent;
+        cursor: pointer;
 
         & li {
             margin-bottom: 0;
@@ -88,14 +92,13 @@ export const Nav = styled.ul`
     }
 `;
 
-export const NavLink = styled(Link)`
+export const NavLink = styled(SmoothLink)`
     padding: .5rem 1rem;
     font-size: 24px;
     color: ${({theme}) => theme.text.main};
 
     @media ${bp.tablet} {
         font-size: 1rem;
-        color: ${({theme}) => theme.text.aux};
         font-weight: 500;
         position: relative;
         
@@ -116,7 +119,6 @@ export const NavLink = styled(Link)`
     }
 
     @media ${bp.laptop} {
-        color: ${({theme}) => theme.text.main};
 
         &:hover {
             color: ${({theme}) => theme.text.secondary}
@@ -133,7 +135,7 @@ export const ControlBtns = styled.div`
 export const MenuIcon = styled.button` 
     position: relative;
     z-index: 5;
-    color: ${({theme}) => theme.text.aux};
+    color: ${({theme}) => theme.text.main};
 
     & i {
         font-size: 20px;
@@ -149,9 +151,9 @@ export const MenuIcon = styled.button`
 `;
 
 export const ThemeChanger = styled.button`
-    color: ${({theme}) => theme.text.aux};
+    color: ${({theme}) => theme.text.secondary};
 
     @media ${bp.laptop} {
-        color: ${({theme}) => theme.neutral.dark};
+        /* color: ${({theme}) => theme.neutral.dark}; */
     }
 `;

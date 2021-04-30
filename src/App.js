@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useChangeTheme } from './hooks/useChangeTheme';
+import ComingSoon from './pages/ComingSoon';
 
 function App() {
   const [ theme, toggleTheme ] = useChangeTheme();  
@@ -25,10 +26,13 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route path="/comingsoon">
+              <ComingSoon />
+            </Route>
           </Switch>
         </main>
 
-        <Footer />
+        <Footer id="contact" />
 
       </ThemeProvider>
       </AppContainer>

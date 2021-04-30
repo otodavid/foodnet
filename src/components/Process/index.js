@@ -2,9 +2,9 @@ import { CardList, Heading2, ProcessSection } from "./style";
 import { data } from './data';
 import Card from "../Card";
 
-const Process = () => {
+const Process = ({ id }) => {
     return ( 
-        <ProcessSection>
+        <ProcessSection id={id}>
             <Heading2>how it works</Heading2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aliquam, sed id eum assumenda rerum iure aut dolore aliquid</p>
             

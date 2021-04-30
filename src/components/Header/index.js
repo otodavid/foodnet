@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as S from "./style";
+import { Link } from "react-router-dom";
 
 const Header = ({ toggleTheme, theme }) => {
     const [ isMenuOpen, setIsMenuOpen ] = useState(false);
@@ -9,7 +10,9 @@ const Header = ({ toggleTheme, theme }) => {
         e.target.classList.contains("fas") && (
             isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)
         );
+    }
 
+    const closeMenu = (e) => {
         // close menu when dark overlay is clicked
         e.target.classList.contains("active") && setIsMenuOpen(false);
 
@@ -25,20 +28,49 @@ const Header = ({ toggleTheme, theme }) => {
             
             <S.Overlay
                 className={isMenuOpen ? "active" : ''}
-                onClick={handleMenu}
+                onClick={closeMenu}
             >
                 <S.Nav>
                     <li>
-                        <S.NavLink to="/">Home</S.NavLink>
+                        <S.NavLink 
+                            as={Link}
+                            to="/"
+                        >
+                            Home
+                        </S.NavLink>
                     </li>
                     <li>
-                        <S.NavLink to="/">Services</S.NavLink>
+                        <S.NavLink
+                            to="services"
+                            smooth
+                            offset={-70}
+                            duration={500}
+                            onClick={closeMenu}
+                        >
+                            Services
+                        </S.NavLink>
                     </li>
                     <li>
-                        <S.NavLink to="/">Our Menu</S.NavLink>
+                        <S.NavLink 
+                            to="menu"
+                            smooth
+                            offset={-70}
+                            duration={500}
+                            onClick={closeMenu}
+                        >
+                            Our Menu
+                        </S.NavLink>
                     </li>
                     <li>
-                        <S.NavLink to="/">Contact</S.NavLink>
+                        <S.NavLink
+                            to="contact"
+                            smooth
+                            offset={-70}
+                            duration={500}
+                            onClick={closeMenu}
+                        >
+                            Contact
+                        </S.NavLink>
                     </li>
                 </S.Nav>
             </S.Overlay>
@@ -53,7 +85,6 @@ const Header = ({ toggleTheme, theme }) => {
                 <S.ThemeChanger onClick={toggleTheme}>
                     { theme === "light" ?  <i className="fas fa-sun"></i> : 
                     <i className="fas fa-moon"></i> }
-                   
                 </S.ThemeChanger>
             </S.ControlBtns>
         </S.HeaderSection>

@@ -4,7 +4,7 @@ import {data} from './data';
 import * as S from './style';
 
 
-const Slider =  () => {
+const Slider =  ({ id }) => {
   const [ current, setCurrent ] = useState(0);
   const [ contentCurrent, setContentCurrent ] = useState(0);
 
@@ -45,7 +45,7 @@ const Slider =  () => {
   }
 
   return (
-      <S.Wrapper>
+      <S.Wrapper id={id}>
         <S.SlideGreenDiv />
         
         <S.SlideImage>
