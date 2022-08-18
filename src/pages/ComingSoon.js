@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Button } from "../components/Button/style";
+import { Button } from "../components";
 
 const Section = styled.section`
     height: 600px;
@@ -24,7 +24,7 @@ const ComingSoon = () => {
             <Button
                 as={Link}
                 to="/"
-                primary    
+                primary="true"   
             >
                 Go back
             </Button>

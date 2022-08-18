@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({theme}) => theme.text.main};
         font-weight: 400;
         line-height: 1.5;
-        transition: all .5s ease-in-out;
+        ${'' /* transition: all .5s ease-in-out; */}
     }
 
     a {
