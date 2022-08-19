@@ -63,7 +63,14 @@ export const MenuLink = styled(NavLink)`
 
 export const GetNotifiedButton = styled(Button)`
   display: block;
-  width: max-content;
+  width: 100%;
   margin-inline: auto;
   margin-top: 7rem;
+  padding: 0;
+
+  & > a {
+    padding: 0.8em 1em;
+    width: 100%;
+    color: #fff;
+  }
 `;

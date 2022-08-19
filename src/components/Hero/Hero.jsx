@@ -3,7 +3,6 @@ import { Button } from '../Button';
 import styled from 'styled-components';
 import { bp } from '../../styles/breakpoints';
 
-
 export function Hero({ id }) {
   return (
     <HeroSection id={id}>
@@ -21,9 +20,9 @@ export function Hero({ id }) {
           atque al
         </p>
 
-        <Button as={Link} to='/comingsoon' primary="true">
-          view our menu
-        </Button>
+        <HeroButton primary>
+          <Link to='/comingsoon'>Get started</Link>
+        </HeroButton>
       </HeroContent>
     </HeroSection>
   );
@@ -34,7 +33,12 @@ export function Hero({ id }) {
  */
 const HeroSection = styled.div`
   position: relative;
-  background: url('assets/images/gallery11.jpg') center / cover no-repeat;
+  background-image: url('assets/images/gallery11.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repaet: no-repeat;
+  background-color: ${({ theme }) => theme.background};
+  transition: background-color 0.2s ease-in;
 
   &::before {
     position: absolute;
@@ -47,22 +51,28 @@ const HeroSection = styled.div`
     background-color: rgba(0, 0, 0, 0.7);
   }
 
-  & button {
-    margin: 2rem auto 0;
-
-    @media ${bp.laptop} {
-      margin: 2rem 0;
-    }
-  }
-
   @media ${bp.laptop} {
-    background: ${({ theme }) => theme.background};
+    background-image: none;
     color: ${({ theme }) => theme.text.main};
     display: flex;
 
     &::before {
       display: none;
     }
+  }
+`;
+
+const HeroButton = styled(Button)`
+  width: min(90%, 12rem);
+  margin: 2rem auto 0;
+
+  & a {
+    color: #fff;
+    width: 100;
+  }
+
+  @media ${bp.laptop} {
+    margin: 2rem 0;
   }
 `;
 

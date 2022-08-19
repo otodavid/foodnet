@@ -14,7 +14,8 @@ export const HeaderSection = styled.header`
   padding: 1.5rem 1rem;
   gap: 2rem;
   z-index: 4;
-  background-color: ${({ theme }) => theme.neutral.light};
+  background-color: ${({ theme }) => theme.background};
+  transition: background-color 0.2s ease-in;
 
   @media ${bp.phablet} {
     padding-inline: 2rem 2rem;
@@ -24,10 +25,8 @@ export const HeaderSection = styled.header`
     --color: ${({ theme }) => theme.neutral.dark};
     width: 100%;
     padding: 1.5rem 6rem;
-    /* background-color: #fff; */
     background-color: ${({ hasScrolled, theme }) =>
       hasScrolled ? theme.background : 'transparent'};
-    transition: background-color 0.3s ease-in-out;
   }
 
   @media ${bp.desktop} {
@@ -129,6 +128,6 @@ export const MenuIcon = styled.button`
 
 export const ThemeChanger = styled.button`
   font-size: 1.125rem;
-  color: ${({ theme }) =>
-    theme === 'light' ? theme.text.secondary : theme.text.main};
+  color: ${({ theme, themeMode }) =>
+    themeMode === 'light' ? theme.text.secondary : theme.text.main};
 `;

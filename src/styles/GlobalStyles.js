@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     :root {
@@ -13,24 +13,24 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: 'Exo 2', Arial, sans-serif;
-        background-color: ${props => props.theme.background};
+        background-color: ${(props) => props.theme.background};
         font-size: var(--body-text);
-        color: ${({theme}) => theme.text.main};
+        color: ${({ theme }) => theme.text.main};
         font-weight: 400;
         line-height: 1.5;
-        ${'' /* transition: all .5s ease-in-out; */}
     }
 
     a {
         display: inline-block;
         text-decoration: none;
         font-size: var(--body-text);
+        color: ${({ theme }) => theme.text.main}
     }
 
     h1, h2, h3 {
         line-height: 1.1;
         margin-bottom: .3em;
-        color: ${({theme}) => theme.text.secondary};
+        color: ${({ theme }) => theme.text.secondary};
     }
 
     h1 {

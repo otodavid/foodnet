@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
-import * as Styled from './style';
+import { useContext, useEffect, useRef, useState } from 'react';
+import * as Styled from './HeaderElements';
 import { FaHamburger, FaMoon, FaSun } from 'react-icons/fa';
 import { scrollToTop } from '../../utils/helpers';
+import { ThemeModeContext } from '../../context/ThemeModeContext';
 
-export function Header({ toggleTheme, theme, toggleMenu }) {
+export function Header({ toggleTheme, toggleMenu }) {
   const headerRef = useRef();
   const [hasScrolled, setHasScrolled] = useState(false);
+  const themeMode = useContext(ThemeModeContext);
 
   const changeHeaderColor = () => {
     if (window.scrollY >= 50) {
@@ -80,8 +82,8 @@ export function Header({ toggleTheme, theme, toggleMenu }) {
       </Styled.Nav>
 
       <Styled.ControlBtns>
-        <Styled.ThemeChanger onClick={toggleTheme}>
-          {theme === 'light' ? <FaMoon /> : <FaSun />}
+        <Styled.ThemeChanger themeMode={themeMode} onClick={toggleTheme}>
+          {themeMode === 'light' ? <FaMoon /> : <FaSun />}
         </Styled.ThemeChanger>
 
         <Styled.MenuIcon onClick={toggleMenu}>

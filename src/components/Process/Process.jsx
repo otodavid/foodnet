@@ -30,6 +30,7 @@ const ProcessSection = styled.section`
   background-color: ${({ theme }) => theme.neutral.light};
   position: relative;
   z-index: 2;
+  transition: background-color 0.2s ease-in;
 
   & p,
   h2 {

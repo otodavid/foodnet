@@ -9,11 +9,12 @@ export function Button({ children, ...others }) {
  */
 //
 const StyledButton = styled.button`
-  padding: 0.8rem 1.6rem;
-  border: 2px solid ${({ theme }) => theme.primary.main};
-  border-radius: 1rem;
+  padding: .8em 1em;
+  border: 1px solid ${({ theme }) => theme.primary.main};
+  border-radius: .625rem;
   color: ${({ theme }) => theme.primary.main};
   text-transform: capitalize;
+  font-size: 1rem;
 
   ${(props) =>
     props.primary &&

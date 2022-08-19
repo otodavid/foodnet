@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   height: 800px;
+  transition: background-color 0.2s ease-in;
 
   @media ${bp.tablet} {
     display: flex;
@@ -196,7 +197,7 @@ export const ContentWrapper = styled.div`
   flex: 1 0 100%;
   opacity: 0;
   transform: translateY(100vh);
-  transition: transform, opacity 0.5s ease-in-out;
+  transition: transform, opacity 0.5s ease-in-out, background-color 0.2s ease-in;
 
   &.active {
     opacity: 1;
@@ -333,7 +334,7 @@ export const Thumbnail = styled.div`
 
 export const SliderNavButton = styled(Button)`
   border: 0;
-  padding: 0.5rem .7rem;
+  padding: 0.5rem 0.7rem;
   display: inline;
   font-size: 1.2rem;
   border-radius: 10px;

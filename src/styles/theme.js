@@ -25,7 +25,6 @@ export const darkTheme = {
     },
     secondary: "#A2BDCD",
     background: "#202124",    
-    // background: "#313131",    
     text: {
         main: "#fff",
         secondary: "#A2BDCD",

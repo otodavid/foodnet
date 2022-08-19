@@ -1,18 +1,22 @@
-import { Logo } from '../Header/style';
+import { Logo } from '../Header/HeaderElements';
 import styled, { css } from 'styled-components';
 import { bp } from '../../styles/breakpoints';
 import { scrollToTop } from '../../utils/helpers';
 import { NavLink } from '../NavLink';
 import { Button } from '../Button';
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { useContext } from 'react';
+import { ThemeModeContext } from '../../context/ThemeModeContext';
 
 export function Footer() {
+  const themeMode = useContext(ThemeModeContext);
+
   return (
-    <footer>
+    <FooterWrapper>
       <FooterSection>
-        <Logo to='/' onClick={scrollToTop}>
+        <FooterLogo to='/' onClick={scrollToTop}>
           foodnet
-        </Logo>
+        </FooterLogo>
 
         <FooterMenu>
           <li>
@@ -27,59 +31,66 @@ export function Footer() {
         </FooterMenu>
 
         <SocialIcons>
-          <IconButton icon='facebook'>
-            <FaFacebookF /> Facebook
+          <IconButton icon='facebook' themeMode={themeMode}>
+            <FaFacebookF />
+            <span>Facebook</span>
           </IconButton>
-          <IconButton icon='youtube'>
-            <FaYoutube /> Youtube
+
+          <IconButton icon='youtube' themeMode={themeMode}>
+            <FaYoutube />
+            <span>Youtube</span>
           </IconButton>
-          <IconButton icon='instagram'>
-            <FaInstagram /> Instagram
+
+          <IconButton icon='instagram' themeMode={themeMode}>
+            <FaInstagram />
+            <span>Instagram</span>
           </IconButton>
-          <IconButton icon='twitter'>
-            <FaTwitter /> Twitter
+
+          <IconButton icon='twitter' themeMode={themeMode}>
+            <FaTwitter />
+            <span>Twitter</span>
           </IconButton>
         </SocialIcons>
       </FooterSection>
 
-      <Copyright>
+      <Copyright themeMode={themeMode}>
         <p>&copy; 2022 David Ojo</p>
       </Copyright>
-    </footer>
+    </FooterWrapper>
   );
 }
 
 /**
  * STYLED COMPONENTS
  */
-const FooterSection = styled.section`
+const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => theme.neutral.light};
+  transition: background-color 0.2s ease-in;
+`;
+
+const FooterSection = styled.div`
+  max-width: 50rem;
   text-align: center;
   padding: 4rem 2rem 2rem;
+  margin-inline: auto;
 
-  @media ${bp.tablet} {
+  @media ${bp.phablet} {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 2rem 3rem;
   }
+`;
 
-  @media ${bp.laptop} {
-    padding-left: 8rem;
-    padding-rightt: 8rem;
-  }
-
-  @media ${bp.laptop} {
-    padding-left: 12rem;
-    padding-right: 12rem;
-  }
+const FooterLogo = styled(Logo)`
+  font-size: 1rem;
 `;
 
 const FooterMenu = styled.ul`
   margin: 1rem 0;
 
-  @media ${bp.tablet} {
+  @media ${bp.phablet} {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -100,30 +111,15 @@ const FooterLink = styled(NavLink)`
 const SocialIcons = styled.div`
   flex: 1 1 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 10rem);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   justify-content: center;
-  justify-items: center;
   padding: 2rem 0;
-  /* width: 100px; */
   margin: 0 auto;
   color: ${({ theme }) => theme.secondary};
-  background-color: #fff;
-
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  & > * {
-    flex: 1 1 10em;
-    max-width: 100%;
-  }
-
-  & > last-child {
-    /* max-width:  */
-  }
 
   @media ${bp.tablet} {
+    grid-template-columns: repeat(4, 1fr);
     margin: 0;
   }
 `;
@@ -134,42 +130,48 @@ const IconButton = styled(Button)`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  border-color: transparent;
+  border-color: ${({ themeMode }) =>
+    themeMode === 'light' ? 'rgb(0, 0, 0, 0.5)' : 'rgb(255, 255, 255, 0.5)'};
+  color: ${({ themeMode }) =>
+    themeMode === 'light' ? 'rgb(0, 0, 0, 0.5)' : 'rgb(255, 255, 255, 0.5)'};
 
-  ${(props) => {
-    switch (props.icon) {
-      case 'facebook':
-        return css`
-          background: #4267b2;
-          color: #fff;
-        `;
-      case 'youtube':
-        return css`
-          background: #ff5a5f;
-          color: #fff;
-        `;
-      case 'instagram':
-        return css`
-          background: #c13584;
-          color: #fff;
-        `;
-      case 'twitter':
-        return css`
-          background: #1da1f2;
-          color: #fff;
-        `;
-      default:
-        return css`
-          background: transparent;
-        `;
-    }
-  }}
+  &:hover {
+    border-color: transparent;
+    color: #fff;
+
+    ${(props) => {
+      switch (props.icon) {
+        case 'facebook':
+          return css`
+            background-color: #4267b2;
+          `;
+        case 'youtube':
+          return css`
+            background-color: #ff5a5f;
+          `;
+        case 'instagram':
+          return css`
+            background-color: #c13584;
+          `;
+        case 'twitter':
+          return css`
+            background-color: #1da1f2;
+          `;
+        default:
+          return css`
+            background-color: transparent;
+          `;
+      }
+    }}
+  }
 `;
 
 const Copyright = styled.div`
   width: 100%;
   padding: 1rem 0;
   text-align: center;
-  background-color: ${({ theme }) => theme.neutral.light};
+  background-color: ${({ themeMode }) =>
+    themeMode === 'light' ? '#e8e7e7' : '#131313'};
   color: ${({ theme }) => theme.text.secondary};
+  transition: background-color 0.2s ease-in;
 `;

@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { Footer, Header, SideNav } from '..';
 
-export const Layout = ({ theme, toggleTheme, children }) => {
+export const Layout = ({ toggleTheme, children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+
   return (
     <>
       <Header
         toggleTheme={toggleTheme}
-        theme={theme}
         isMenuOpen={isMenuOpen}
         toggleMenu={toggleMenu}
       />
@@ -24,7 +23,7 @@ export const Layout = ({ theme, toggleTheme, children }) => {
 
       <main>{children}</main>
 
-      <Footer id='contact' />
+      <Footer />
     </>
   );
 };
