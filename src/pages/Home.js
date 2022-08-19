@@ -9,10 +9,10 @@ import {
 const Home = () => {
   return (
     <>
-      <Hero id='hero' />
+      {/* <Hero id='hero' />
       <Process id='how-it-works' />
       <Slider id='menu' />
-      <Gallery id='gallery' />
+      <Gallery id='gallery' /> */}
       <Newsletter id='contact' />
     </>
   );

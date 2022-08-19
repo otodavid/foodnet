@@ -9,3 +9,4 @@ export { Footer } from './Footer';
 export { Header } from './Header';
 export { SideNav } from './SideNav';
 export { Layout } from './Layout';
+export { NavLink } from './NavLink';

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Button } from '../Button';
 import {
   Container,
   Backdrop,
@@ -10,14 +9,15 @@ import {
   GetNotifiedButton,
 } from './SideNavElements';
 import { FaTimes } from 'react-icons/fa';
+import { NavLink } from '../NavLink';
 
-export function SideNav({ isMenuOpen, toggleMenu, setIsMenuOpen }) {
+export function SideNav({ isMenuOpen, toggleMenu }) {
   const backdropRef = useRef();
-  
+
   const handleBackdropClick = (e) => {
     if (e.target.classList.contains('backdrop')) return toggleMenu();
   };
-  
+
   // prevent body from scrolling when menu is open
   useEffect(() => {
     const bodyEl = document.querySelector('body');
@@ -43,59 +43,37 @@ export function SideNav({ isMenuOpen, toggleMenu, setIsMenuOpen }) {
         </CloseIcon>
         <Menu>
           <MenuItem>
-            <MenuLink
-              to='hero'
-              smooth={true}
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-            >
-              Home
-            </MenuLink>
+            <MenuLink to='hero' toggleMenu={toggleMenu} displayName='Home' />
           </MenuItem>
           <MenuItem>
             <MenuLink
               to='how-it-works'
-              smooth={true}
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-            >
-              How it works
-            </MenuLink>
+              toggleMenu={toggleMenu}
+              displayName='How it works'
+            />
           </MenuItem>
           <MenuItem>
             <MenuLink
               to='menu'
-              smooth={true}
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-            >
-              Menu
-            </MenuLink>
+              toggleMenu={toggleMenu}
+              displayName='Our Menu'
+            />
           </MenuItem>
           <MenuItem>
             <MenuLink
               to='gallery'
-              smooth={true}
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-            >
-              Gallery
-            </MenuLink>
+              toggleMenu={toggleMenu}
+              displayName='Gallery'
+            />
           </MenuItem>
         </Menu>
 
-        <GetNotifiedButton
-          to='contact'
-          smooth={true}
-          duration={500}
-          offset={-70}
-          onClick={toggleMenu}
-        >
-          <Button primary>Get Notified Early</Button>
+        <GetNotifiedButton primary>
+          <NavLink
+            to='contact'
+            onClick={toggleMenu}
+            displayName='Get Notified Early'
+          />
         </GetNotifiedButton>
       </Container>
     </Backdrop>

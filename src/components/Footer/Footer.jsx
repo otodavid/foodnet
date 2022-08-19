@@ -1,51 +1,51 @@
 import { Logo } from '../Header/style';
-import { animateScroll as scroll } from 'react-scroll';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { bp } from '../../styles/breakpoints';
+import { scrollToTop } from '../../utils/helpers';
+import { NavLink } from '../NavLink';
+import { Button } from '../Button';
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 export function Footer() {
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
-
   return (
-    <FooterSection>
-      <Logo to='/' onClick={scrollToTop}>
-        foodnet
-      </Logo>
+    <footer>
+      <FooterSection>
+        <Logo to='/' onClick={scrollToTop}>
+          foodnet
+        </Logo>
 
-      <FooterMenu>
-        <li>
-          <FooterLink to='/'>Home</FooterLink>
-        </li>
-        <li>
-          <FooterLink to='/'>Services</FooterLink>
-        </li>
-        <li>
-          <FooterLink to='/'>Our Menu</FooterLink>
-        </li>
-        <li>
-          <FooterLink to='/'>Contact</FooterLink>
-        </li>
-      </FooterMenu>
+        <FooterMenu>
+          <li>
+            <FooterLink to='how-it-works' displayName='How it works' />
+          </li>
+          <li>
+            <FooterLink to='menu' displayName='Our Menu' />
+          </li>
+          <li>
+            <FooterLink to='gallery' displayName='Gallery' />
+          </li>
+        </FooterMenu>
 
-      <SocialIcons>
-        <i className='fab fa-facebook-f'></i>
-        <i className='fab fa-instagram'></i>
-        <i className='fab fa-twitter'></i>
-      </SocialIcons>
+        <SocialIcons>
+          <IconButton icon='facebook'>
+            <FaFacebookF /> Facebook
+          </IconButton>
+          <IconButton icon='youtube'>
+            <FaYoutube /> Youtube
+          </IconButton>
+          <IconButton icon='instagram'>
+            <FaInstagram /> Instagram
+          </IconButton>
+          <IconButton icon='twitter'>
+            <FaTwitter /> Twitter
+          </IconButton>
+        </SocialIcons>
+      </FooterSection>
 
       <Copyright>
-        <p>
-          Made with &nbsp;
-          <span>
-            <i className='fas fa-heart'></i>
-          </span>{' '}
-          &nbsp; by Oloruntomi David
-        </p>
+        <p>&copy; 2022 David Ojo</p>
       </Copyright>
-    </FooterSection>
+    </footer>
   );
 }
 
@@ -86,10 +86,11 @@ const FooterMenu = styled.ul`
   }
 `;
 
-const FooterLink = styled(Link)`
+const FooterLink = styled(NavLink)`
   color: ${({ theme }) => theme.text.secondary};
   padding: 0.5rem;
   font-weight: 500;
+  cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.primary.main};
@@ -97,20 +98,29 @@ const FooterLink = styled(Link)`
 `;
 
 const SocialIcons = styled.div`
-  display: flex;
-  justify-content: space-between;
+  flex: 1 1 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 10rem);
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
   padding: 2rem 0;
-  width: 100px;
+  /* width: 100px; */
   margin: 0 auto;
   color: ${({ theme }) => theme.secondary};
+  background-color: #fff;
 
-  i {
-    font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-    &:hover {
-      color: ${({ theme }) => theme.primary.main};
-      cursor: pointer;
-    }
+  & > * {
+    flex: 1 1 10em;
+    max-width: 100%;
+  }
+
+  & > last-child {
+    /* max-width:  */
   }
 
   @media ${bp.tablet} {
@@ -118,9 +128,47 @@ const SocialIcons = styled.div`
   }
 `;
 
+const IconButton = styled(Button)`
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-color: transparent;
+
+  ${(props) => {
+    switch (props.icon) {
+      case 'facebook':
+        return css`
+          background: #4267b2;
+          color: #fff;
+        `;
+      case 'youtube':
+        return css`
+          background: #ff5a5f;
+          color: #fff;
+        `;
+      case 'instagram':
+        return css`
+          background: #c13584;
+          color: #fff;
+        `;
+      case 'twitter':
+        return css`
+          background: #1da1f2;
+          color: #fff;
+        `;
+      default:
+        return css`
+          background: transparent;
+        `;
+    }
+  }}
+`;
+
 const Copyright = styled.div`
   width: 100%;
-  padding: 2rem 0 1rem;
+  padding: 1rem 0;
   text-align: center;
   background-color: ${({ theme }) => theme.neutral.light};
   color: ${({ theme }) => theme.text.secondary};

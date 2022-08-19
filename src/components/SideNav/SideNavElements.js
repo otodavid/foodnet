@@ -1,6 +1,7 @@
-import { Link as SmoothLink } from 'react-scroll';
 import styled from 'styled-components';
 import { bp } from '../../styles/breakpoints';
+import { Button } from '../Button';
+import { NavLink } from '../NavLink';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -8,14 +9,14 @@ export const Backdrop = styled.div`
   height: 100vh;
   background-color: rgb(0, 0, 0, 0.8);
   opacity: ${({ isMenuOpen }) => (isMenuOpen ? '1' : '0')};
-  visibilty: ${({ isMenuOpen }) => (isMenuOpen ? 'visible' : 'hidden')};
-  z-index: ${({ isMenuOpen }) => (isMenuOpen ? '5' : '0')};
+  visibility: ${({ isMenuOpen }) => (isMenuOpen ? 'visible' : 'hidden')};
+  z-index: ${({ isMenuOpen }) => (isMenuOpen ? '5' : '-1')};
   transition: all 0.3s;
 
   @supports (backdrop-filter: blur()) {
     backdrop-filter: blur(5px);
   }
-  
+
   @media ${bp.tablet} {
     display: none;
     transition: none;
@@ -35,7 +36,7 @@ export const Container = styled.nav`
 
 export const CloseIcon = styled.button`
   margin-left: auto;
-  color: ${({theme}) => theme.text.main};
+  color: ${({ theme }) => theme.text.main};
 `;
 export const Menu = styled.ul`
   padding-block: 2rem;
@@ -44,7 +45,7 @@ export const MenuItem = styled.li`
   margin: 1em 0em;
 `;
 
-export const MenuLink = styled(SmoothLink)`
+export const MenuLink = styled(NavLink)`
   font-size: 1.25rem;
   font-weight: 500;
   padding: 0.3em 0.2em;
@@ -54,9 +55,13 @@ export const MenuLink = styled(SmoothLink)`
   &:hover {
     color: ${({ theme }) => theme.primary.main};
   }
+
+  &.active {
+    color: ${({ theme }) => theme.primary.main};
+  }
 `;
 
-export const GetNotifiedButton = styled(SmoothLink)`
+export const GetNotifiedButton = styled(Button)`
   display: block;
   width: max-content;
   margin-inline: auto;

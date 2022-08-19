@@ -21,9 +21,13 @@ export const HeaderSection = styled.header`
   }
 
   @media ${bp.laptop} {
-    width: 83vw;
-    padding: 1.5rem 0rem 1.5rem 6rem;
-    background-color: transparent;
+    --color: ${({ theme }) => theme.neutral.dark};
+    width: 100%;
+    padding: 1.5rem 6rem;
+    /* background-color: #fff; */
+    background-color: ${({ hasScrolled, theme }) =>
+      hasScrolled ? theme.background : 'transparent'};
+    transition: background-color 0.3s ease-in-out;
   }
 
   @media ${bp.desktop} {
@@ -62,12 +66,17 @@ export const NavLink = styled(SmoothLink)`
     color: ${({ theme }) => theme.primary.main};
   }
 
+  &.active {
+    color: ${({ theme }) => theme.primary.main};
+  }
+
   @media ${bp.tablet} {
     font-size: 1rem;
     font-weight: 500;
     position: relative;
 
-    &::after {
+    &::after,
+    &.active::after {
       position: absolute;
       content: '';
       bottom: 0;
@@ -78,7 +87,8 @@ export const NavLink = styled(SmoothLink)`
       transition: width 0.3s ease;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &.after::after {
       width: 40%;
     }
   }
@@ -100,7 +110,7 @@ export const ControlBtns = styled.div`
     vertical-align: middle;
   }
 
-  @media ${bp.laptop} {
+  @media ${bp.tablet} {
     flex-basis: 1.5rem;
     justify-content: center;
   }

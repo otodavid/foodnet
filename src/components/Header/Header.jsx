@@ -1,34 +1,80 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as Styled from './style';
-import { Link } from 'react-router-dom';
 import { FaHamburger, FaMoon, FaSun } from 'react-icons/fa';
+import { scrollToTop } from '../../utils/helpers';
 
 export function Header({ toggleTheme, theme, toggleMenu }) {
-  const menuButtonRef = useRef();
+  const headerRef = useRef();
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const changeHeaderColor = () => {
+    if (window.scrollY >= 50) {
+      setHasScrolled(true);
+    } else {
+      setHasScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeHeaderColor);
+    return () => {
+      window.removeEventListener('scroll', changeHeaderColor);
+    };
+  }, [hasScrolled]);
 
   return (
-    <Styled.HeaderSection>
-      <Styled.Logo to='/'>foodnet</Styled.Logo>
+    <Styled.HeaderSection ref={headerRef} hasScrolled={hasScrolled}>
+      <Styled.Logo to='/' onClick={scrollToTop}>
+        foodnet
+      </Styled.Logo>
 
-      <Styled.Nav>
+      <Styled.Nav className='main-nav'>
         <li>
-          <Styled.NavLink to='hero' duration={500} smooth>
+          <Styled.NavLink
+            to='hero'
+            duration={500}
+            smooth
+            activeClass='active'
+            spy={true}
+            offset={-90}
+          >
             Home
           </Styled.NavLink>
         </li>
         <li>
-          <Styled.NavLink to='services' smooth offset={-70} duration={500}>
-            Services
+          <Styled.NavLink
+            to='how-it-works'
+            smooth
+            offset={-90}
+            duration={500}
+            activeClass='active'
+            spy={true}
+          >
+            How it works
           </Styled.NavLink>
         </li>
         <li>
-          <Styled.NavLink to='menu' smooth offset={-70} duration={500}>
+          <Styled.NavLink
+            to='menu'
+            smooth
+            offset={-90}
+            duration={500}
+            activeClass='active'
+            spy={true}
+          >
             Our Menu
           </Styled.NavLink>
         </li>
         <li>
-          <Styled.NavLink to='contact' smooth offset={-70} duration={500}>
-            Contact
+          <Styled.NavLink
+            to='gallery'
+            smooth
+            offset={-90}
+            duration={500}
+            activeClass='active'
+            spy={true}
+          >
+            Gallery
           </Styled.NavLink>
         </li>
       </Styled.Nav>
@@ -38,7 +84,7 @@ export function Header({ toggleTheme, theme, toggleMenu }) {
           {theme === 'light' ? <FaMoon /> : <FaSun />}
         </Styled.ThemeChanger>
 
-        <Styled.MenuIcon onClick={toggleMenu} ref={menuButtonRef}>
+        <Styled.MenuIcon onClick={toggleMenu}>
           <FaHamburger />
         </Styled.MenuIcon>
       </Styled.ControlBtns>
