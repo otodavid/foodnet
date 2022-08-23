@@ -15,12 +15,12 @@ export function Hero({ id }) {
       <HeroContent>
         <h1>start your day the right way</h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi eos
-          repellendus, corrupti excepturi eum tempora! Praesentium perspiciatis
-          atque al
+          It's time for breakfast! Order your favorite dish from a wide range of
+          selections like eggs, bacon, pancakes, and more. We cook it fresh and
+          deliver it to your doorstep.
         </p>
 
-        <HeroButton primary>
+        <HeroButton primary={true} anchorElement={true}>
           <Link to='/comingsoon'>Get started</Link>
         </HeroButton>
       </HeroContent>
@@ -59,20 +59,6 @@ const HeroSection = styled.div`
     &::before {
       display: none;
     }
-  }
-`;
-
-const HeroButton = styled(Button)`
-  width: min(90%, 12rem);
-  margin: 2rem auto 0;
-
-  & a {
-    color: #fff;
-    width: 100;
-  }
-
-  @media ${bp.laptop} {
-    margin: 2rem 0;
   }
 `;
 
@@ -177,5 +163,19 @@ const HeroContent = styled.div`
 
   @media ${bp.desktop} {
     padding-left: 9rem;
+  }
+`;
+
+const HeroButton = styled(Button)`
+  width: min(90%, 12rem);
+  margin: 2rem auto 0;
+
+  & a {
+    color: #fff;
+    width: 100;
+  }
+
+  @media ${bp.laptop} {
+    margin: 2rem 0;
   }
 `;

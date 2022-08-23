@@ -6,8 +6,12 @@ const ComingSoon = () => {
   return (
     <Section>
       <h1>COMING SOON &#128512;</h1>
-      <PageButton primary='true'>
-        <Link to='/'>Go back</Link>
+      <p>
+        Wait, don't go yet. Subscribe to our newsletter to know when we launch
+        and other exciting news{' '}
+      </p>
+      <PageButton primary={true} anchorElement={true}>
+        <Link to='/' >Sign up</Link>
       </PageButton>
     </Section>
   );
@@ -28,10 +32,15 @@ const Section = styled.section`
   h1 {
     text-align: center;
   }
+
+  p {
+    width: 40ch;
+  }
 `;
 
 const PageButton = styled(Button)`
   width: 10rem;
+  margin-top: 2rem;
 
   & > a {
     color: #fff;
