@@ -4,10 +4,11 @@ import { FaHamburger, FaMoon, FaSun } from 'react-icons/fa';
 import { scrollToTop } from '../../utils/helpers';
 import { ThemeModeContext } from '../../context/ThemeModeContext';
 
-export function Header({ toggleTheme, toggleMenu }) {
+export function Header({ toggleTheme, openNav }) {
   const headerRef = useRef();
   const [hasScrolled, setHasScrolled] = useState(false);
   const themeMode = useContext(ThemeModeContext);
+  const menuBtnRef = useRef(null);
 
   const changeHeaderColor = () => {
     if (window.scrollY >= 50) {
@@ -86,7 +87,10 @@ export function Header({ toggleTheme, toggleMenu }) {
           {themeMode === 'light' ? <FaMoon /> : <FaSun />}
         </Styled.ThemeChanger>
 
-        <Styled.MenuIcon onClick={toggleMenu}>
+        <Styled.MenuIcon
+          ref={menuBtnRef}
+          onClick={() => openNav(menuBtnRef.current)}
+        >
           <FaHamburger />
         </Styled.MenuIcon>
       </Styled.ControlBtns>

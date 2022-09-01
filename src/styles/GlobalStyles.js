@@ -11,6 +11,14 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html {
+        scroll-padding-top: 5rem;
+
+        @media (prefers-reduced-motion: no-preference) {
+            scroll-behavior: smooth;
+        }
+    }
+
     body {
         font-family: 'Exo 2', Arial, sans-serif;
         background-color: ${(props) => props.theme.background};
@@ -24,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
         display: inline-block;
         text-decoration: none;
         font-size: var(--body-text);
-        color: ${({ theme }) => theme.text.main}
+        color: ${({ theme }) => theme.text.main};
     }
 
     h1, h2, h3 {
@@ -65,9 +73,24 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 500;
         background: transparent;
         cursor: pointer;
+
     }
 
     ul {
         list-style: none;
+    }
+
+    :focus-visible {
+        outline-offset: 0.3rem;
+    }
+
+    input:focus, input:focus-visible {
+        outline: 1px solid ${({ theme }) => theme.neutral.main};
+        outline-offset: .3rem;
+    }
+
+    #modal-root {
+        position: relative;
+        z-index: 99999;
     }
 `;

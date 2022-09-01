@@ -50,21 +50,21 @@ export const ProcessData = [
     id: 1,
     title: 'Make an order',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel blanditiis reprehenderit dolorem ad eaque dolorib',
+      'We have a wide range of breakfast options to cater to your mood and taste buds. Whether you are ordering for yourself or a whole family, we have the perfect meal for you.',
     icon: OrderIcon,
   },
   {
     id: 2,
     title: 'We cook',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel blanditiis reprehenderit dolorem ad eaque dolorib',
+      'We take care of every detail of your order. Our meals are cooked fresh, healthy, with no preservatives added.',
     icon: CookIcon,
   },
   {
     id: 3,
     title: 'Fast Delivery',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel blanditiis reprehenderit dolorem ad eaque dolorib',
+      'No more rushing around town in the morning waiting in line at a crowded restaurant. We\'ll deliver your breakfast direct to your door (or office) on time every time!',
     icon: DeliveryIcon,
   },
 ];
@@ -72,28 +72,28 @@ export const ProcessData = [
 export const slidesData = [
   {
     id: 1,
-    name: 'Baked Beans and hot sauce',
+    name: 'Fruity waffles',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
     price: '12.99',
     image: 'assets/images/slide.png',
   },
   {
     id: 2,
-    name: 'Pancakes and hotdogs',
+    name: 'All about the sandwich',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
     price: '10.99',
     image: 'assets/images/slide2.png',
   },
   {
     id: 3,
-    name: 'Yam and Egg sauce',
+    name: 'Healthy toast',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
     price: '29.99',
     image: 'assets/images/slide3.png',
   },
   {
     id: 4,
-    name: 'Veggie Sandwich and strawberries',
+    name: 'The complete breakfast',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
     price: '19.99',
     image: 'assets/images/slide4.png',

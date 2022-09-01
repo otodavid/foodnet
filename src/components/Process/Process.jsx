@@ -7,11 +7,7 @@ export function Process({ id }) {
   return (
     <ProcessSection id={id}>
       <Heading2>how it works</Heading2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aliquam,
-        sed id eum assumenda rerum iure aut dolore aliquid
-      </p>
-
+    
       <CardList>
         {ProcessData.map((item) => (
           <Card data={item} key={item.id} />

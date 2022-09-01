@@ -20,7 +20,7 @@ export function Card({ data }) {
  */
 const CardContainer = styled.div`
   flex: 1 1 250px;
-  padding: 3.5rem 0.8rem;
+  padding: 3.5rem 1rem;
   background-color: ${({ theme }) => theme.background};
   border-radius: 10px;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.1);

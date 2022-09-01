@@ -10,8 +10,8 @@ const ComingSoon = () => {
         Wait, don't go yet. Subscribe to our newsletter to know when we launch
         and other exciting news{' '}
       </p>
-      <PageButton primary={true} anchorElement={true}>
-        <Link to='/' >Sign up</Link>
+      <PageButton forwardedAs={Link} to='/' primary='true'>
+        Sign up
       </PageButton>
     </Section>
   );
@@ -20,6 +20,7 @@ const ComingSoon = () => {
 export default ComingSoon;
 
 const Section = styled.section`
+  width: calc(100% - 2rem);
   min-height: calc(100vh - 19rem);
   display: flex;
   flex-direction: column;
@@ -28,6 +29,7 @@ const Section = styled.section`
   align-items: center;
   gap: 1rem;
   padding-block: 10rem;
+  margin-inline: auto;
 
   h1 {
     text-align: center;

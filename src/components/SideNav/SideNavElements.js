@@ -5,12 +5,13 @@ import { NavLink } from '../NavLink';
 
 export const Backdrop = styled.div`
   position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgb(0, 0, 0, 0.8);
-  opacity: ${({ isMenuOpen }) => (isMenuOpen ? '1' : '0')};
-  visibility: ${({ isMenuOpen }) => (isMenuOpen ? 'visible' : 'hidden')};
-  z-index: ${({ isMenuOpen }) => (isMenuOpen ? '5' : '-1')};
+  opacity: ${({ isHidden }) => (!isHidden ? '1' : '0')};
+  visibility: ${({ isHidden }) => (!isHidden ? 'visible' : 'hidden')};
+  z-index: ${({ isHidden }) => (!isHidden ? '5' : '-1')};
   transition: all 0.3s;
 
   @supports (backdrop-filter: blur()) {
@@ -29,18 +30,21 @@ export const Container = styled.nav`
   margin-left: auto;
   background-color: ${({ theme }) => theme.background};
   padding: 2rem;
-  transform: ${({ isMenuOpen }) =>
-    isMenuOpen ? 'translateX(0)' : 'translateX(100vw)'};
-  transition: transform 0.3s;
+  transform: ${({ isHidden }) =>
+    !isHidden ? 'translateX(0)' : 'translateX(100vw)'};
+  transition: ${({ isHidden }) =>
+    isHidden ? 'transform 0.3s' : 'transform 0.3s'};
 `;
 
 export const CloseIcon = styled.button`
   margin-left: auto;
   color: ${({ theme }) => theme.text.main};
 `;
+
 export const Menu = styled.ul`
   padding-block: 2rem;
 `;
+
 export const MenuItem = styled.li`
   margin: 1em 0em;
 `;

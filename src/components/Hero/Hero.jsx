@@ -20,8 +20,8 @@ export function Hero({ id }) {
           deliver it to your doorstep.
         </p>
 
-        <HeroButton primary={true} anchorElement={true}>
-          <Link to='/comingsoon'>Get started</Link>
+        <HeroButton forwardedAs={Link} to='/comingsoon' primary='true'>
+          Get started
         </HeroButton>
       </HeroContent>
     </HeroSection>
