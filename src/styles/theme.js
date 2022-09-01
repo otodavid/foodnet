@@ -13,7 +13,7 @@ export const lightTheme = {
     },
     neutral: {
         light: "#f5f5f5",
-        dark: "#141414",
+        dark: "#171717",
     },
 }
 
@@ -24,14 +24,14 @@ export const darkTheme = {
         dark: "#0B4630",
     },
     secondary: "#A2BDCD",
-    background: "#282828",
+    background: "#202124",    
     text: {
         main: "#fff",
         secondary: "#A2BDCD",
         aux: "#fff",
     },
     neutral: {
-        light: "#141414",
+        light: "#171717",
         dark: "#f9f9f9",
     },
 
