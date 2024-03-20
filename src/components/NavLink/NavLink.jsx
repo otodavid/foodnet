@@ -5,8 +5,6 @@ export function NavLink({ displayName, to, closeNav, ...others }) {
   return (
     <Link
       to={to}
-      smooth={true}
-      duration={500}
       offset={-80}
       onClick={closeNav}
       activeClass='active'

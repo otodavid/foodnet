@@ -9,17 +9,17 @@ export function Newsletter({ id }) {
   return (
     <Container id={id}>
       <NewsletterIntro>
-        <h3>Get Notified</h3>
+        <h3>Stay in the loop</h3>
         <p>
-          Lorem ipsum dolor sit ametconsectetur adipisicing elit.Cumque harum
-          nihil sunt quasiveritatis nemo necessitatibusperferendis animi dicta,
-          ratio
+          Foodnet is committed to providing quality meals and excellent customer
+          service. Subscribe to our newsletter to be the first to get in on the
+          action when we launch
         </p>
       </NewsletterIntro>
 
       <SubscribeForm>
         <TextField placeholder='Email Address' themeMode={themeMode} />
-        <FormButton primary='true'>Subscribe</FormButton>
+        <FormButton primary='true'>Sign Up Now</FormButton>
       </SubscribeForm>
     </Container>
   );
@@ -33,7 +33,6 @@ const Container = styled.div`
   padding: 4rem 2rem;
   text-align: center;
   transition: background-color 0.2s ease-in;
-
 `;
 
 const NewsletterIntro = styled.div`
@@ -63,15 +62,14 @@ const TextField = styled.input.attrs((props) => ({
   width: 100%;
   background-color: transparent;
   color: ${({ theme }) => theme.text.main};
-  border-radius: .625em;
+  border-radius: 0.625em;
   box-shadow: ${({ themeMode, theme }) =>
     themeMode === 'light'
       ? 'inset rgb(0,0,0, .5) 0 0 0 1px'
       : 'inset rgb(255,255,255,0.5) 0 0 0 1px'};
   transition: box-shadow 0.3s;
 
-  &:hover,
-  &:focus {
+  &:hover {
     box-shadow: ${({ themeMode, theme }) =>
       themeMode === 'light'
         ? 'inset #202124 0 0 0 1px'

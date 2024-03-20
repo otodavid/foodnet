@@ -1,4 +1,5 @@
-import { Link as SmoothLink } from 'react-scroll';
+// import { Link as SmoothLink } from 'react-scroll';
+import { NavLink } from '../NavLink';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { bp } from '../../styles/breakpoints';
@@ -6,8 +7,7 @@ import { bp } from '../../styles/breakpoints';
 export const HeaderSection = styled.header`
   position: fixed;
   top: 0px;
-  left: 0;
-  width: 100%;
+  width: min(1600px, 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@ export const HeaderSection = styled.header`
   gap: 2rem;
   z-index: 4;
   background-color: ${({ theme }) => theme.background};
-  transition: background-color 0.2s ease-in;
+  transition: background-color 0.3s ease-in;
 
   @media ${bp.phablet} {
     padding-inline: 2rem 2rem;
@@ -23,7 +23,6 @@ export const HeaderSection = styled.header`
 
   @media ${bp.laptop} {
     --color: ${({ theme }) => theme.neutral.dark};
-    width: 100%;
     padding: 1.5rem 6rem;
     background-color: ${({ hasScrolled, theme }) =>
       hasScrolled ? theme.background : 'transparent'};
@@ -31,6 +30,7 @@ export const HeaderSection = styled.header`
 
   @media ${bp.desktop} {
     padding-left: 9rem;
+    gap: 6rem;
   }
 `;
 
@@ -55,7 +55,7 @@ export const Nav = styled.ul`
   }
 `;
 
-export const NavLink = styled(SmoothLink)`
+export const MenuLink = styled(NavLink)`
   font-size: 24px;
   color: ${({ theme }) => theme.text.main};
   padding: 0.5rem 1rem;

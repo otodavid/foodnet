@@ -33,52 +33,16 @@ export function Header({ toggleTheme, openNav }) {
 
       <Styled.Nav className='main-nav'>
         <li>
-          <Styled.NavLink
-            to='hero'
-            duration={500}
-            smooth
-            activeClass='active'
-            spy={true}
-            offset={-90}
-          >
-            Home
-          </Styled.NavLink>
+          <Styled.MenuLink to={'hero'} displayName={'Home'} />
         </li>
         <li>
-          <Styled.NavLink
-            to='how-it-works'
-            smooth
-            offset={-90}
-            duration={500}
-            activeClass='active'
-            spy={true}
-          >
-            How it works
-          </Styled.NavLink>
+          <Styled.MenuLink to='how-it-works' displayName={'How it works'} />
         </li>
         <li>
-          <Styled.NavLink
-            to='menu'
-            smooth
-            offset={-90}
-            duration={500}
-            activeClass='active'
-            spy={true}
-          >
-            Our Menu
-          </Styled.NavLink>
+          <Styled.MenuLink to='menu' displayName={'Our Menu'} />
         </li>
         <li>
-          <Styled.NavLink
-            to='gallery'
-            smooth
-            offset={-90}
-            duration={500}
-            activeClass='active'
-            spy={true}
-          >
-            Gallery
-          </Styled.NavLink>
+          <Styled.MenuLink to='gallery' displayName={'Gallery'} />
         </li>
       </Styled.Nav>
 
