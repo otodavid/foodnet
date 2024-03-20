@@ -102,9 +102,7 @@ export function SideNav({
 
               <Menu>
                 <MenuItem>
-                  <MenuLink to='hero' closeNav={closeNav} displayName='Home'>
-                    Home
-                  </MenuLink>
+                  <MenuLink to='hero' closeNav={closeNav} displayName='Home' />
                 </MenuItem>
 
                 <MenuItem>

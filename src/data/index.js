@@ -50,52 +50,68 @@ export const ProcessData = [
     id: 1,
     title: 'Make an order',
     content:
-      'We have a wide range of breakfast options to cater to your mood and taste buds. Whether you are ordering for yourself or a whole family, we have the perfect meal for you.',
+      'Browse our mouthwatering menu and select your favorite breakfast or brunch items. Customize your order to fit your cravings and dietary preferences.',
     icon: OrderIcon,
   },
   {
     id: 2,
     title: 'We cook',
     content:
-      'We take care of every detail of your order. Our meals are cooked fresh, healthy, with no preservatives added.',
+      'Our talented chefs get to work crafting your meal with the freshest ingredients available. Every dish is prepared with care and attention to ensure it\'s bursting with flavor.',
     icon: CookIcon,
   },
   {
     id: 3,
     title: 'Fast Delivery',
     content:
-      'No more rushing around town in the morning waiting in line at a crowded restaurant. We\'ll deliver your breakfast direct to your door (or office) on time every time!',
+      'Sit back and relax as we swiftly deliver your freshly cooked breakfast straight to your doorstep. Enjoy the convenience of a delicious meal without any hassle.',
     icon: DeliveryIcon,
   },
 ];
 
 export const slidesData = [
+  
   {
     id: 1,
-    name: 'Fruity waffles',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
-    price: '12.99',
-    image: 'assets/images/slide.png',
+    name: 'Poached Eggs on Toast',
+    desc: 'Indulge in perfectly poached eggs delicately placed on toasted artisan bread. A classic breakfast choice that never fails to satisfy.',
+    price: '13.99',
+    image: 'assets/images/slide1.png',
   },
   {
     id: 2,
-    name: 'All about the sandwich',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
-    price: '10.99',
+    name: 'Turkey Sandwich',
+    desc: 'Experience the savory goodness of thinly sliced turkey nestled between slices of fresh bread. Topped with crisp lettuce, juicy tomatoes, and creamy mayo for a satisfying bite.',
+    price: '24.99',
     image: 'assets/images/slide2.png',
   },
   {
     id: 3,
-    name: 'Healthy toast',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
-    price: '29.99',
+    name: 'Avocado Toast',
+    desc: 'Elevate your morning with our signature avocado toast. Creamy avocado spread atop hearty whole grain bread, sprinkled with a dash of sea salt and red pepper flakes for a burst of flavor.',
+    price: '19.99',
     image: 'assets/images/slide3.png',
   },
   {
     id: 4,
-    name: 'The complete breakfast',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
+    name: 'Eggs and Cheese',
+    desc: 'Indulge in a comforting combination of fluffy scrambled eggs mixed with gooey melted cheese. Perfectly paired with your choice of sides for a hearty and wholesome breakfast.',
     price: '19.99',
     image: 'assets/images/slide4.png',
   },
+  
+  // {
+  //   id: 5,
+  //   name: 'Fruity waffles',
+  //   desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
+  //   price: '12.99',
+  //   image: 'assets/images/slide.png',
+  // },
+  // {
+  //   id: 6,
+  //   name: 'The complete breakfast',
+  //   desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio incidunt illum nobis tenetur impedit quibusdam maxime suscipit, omnis eiu',
+  //   price: '19.99',
+  //   image: 'assets/images/slide4.png',
+  // }
 ];

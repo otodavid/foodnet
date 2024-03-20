@@ -15,9 +15,9 @@ export function Hero({ id }) {
       <HeroContent>
         <h1>start your day the right way</h1>
         <p>
-          It's time for breakfast! Order your favorite dish from a wide range of
-          selections like eggs, bacon, pancakes, and more. We cook it fresh and
-          deliver it to your doorstep.
+          Wake up to delicious breakfasts with <span>FoodNet</span> and savor
+          every morning with fresh, flavorful brunch delivered right to your
+          doorstep
         </p>
 
         <HeroButton forwardedAs={Link} to='/comingsoon' primary='true'>
@@ -153,6 +153,10 @@ const HeroContent = styled.div`
       width: 91%;
       color: ${({ theme }) => theme.text.main};
     }
+  }
+
+  span {
+    color: ${({ theme }) => theme.primary.main};
   }
 
   @media ${bp.laptop} {
